@@ -2,12 +2,11 @@
 <link href="<?php echo base_url('plugins/fancybox/fancybox.min.css') ?>" type="text/css" rel="stylesheet">
 <link href="<?php echo base_url('plugins/owlcarousel/assets/owl.carousel.min.css') ?>" rel="stylesheet">
 <link href="<?php echo base_url('plugins/owlcarousel/assets/owl.theme.default.css') ?>" rel="stylesheet">
-<link href="<?php echo base_url('css/ui.css') ?>" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url('css/responsive.css') ?>" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 
-
+<header>
 <section class="header-main shadow-sm">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row-sm align-items-center">
 			<div class="col-lg-4-24 col-sm-3">
 				<div class="category-wrap dropdown py-1">
@@ -31,7 +30,7 @@
 						</select>
 						<input type="text" class="form-control" style="width:50%;" placeholder="Search">
 						<div class="input-group-append">
-							<button class="btn btn-success" type="submit">
+							<button class="btn btn-success" type="submit" style="margin-top: 0px">
 								<i class="fa fa-search"></i> Search 
 							</button>
 						</div>
@@ -135,7 +134,7 @@
 										<input type="checkbox" class="form-check-input">Supplier Terbaru
 									</a>
 								</label>
-							</div> <!-- dropdown-menu.// -->
+							</div>
 						</li>
 						<li class="list-inline-item dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kota</a>
 							<div class="dropdown-menu p-3" style="max-width:400px;"">	
@@ -164,11 +163,11 @@
 					<li class="list-inline-item"><a href="#">Tipe Produk</a></li>
 					<li class="list-inline-item">
 						<div class="form-inline">
-							<label class="mr-4">Price</label>
+							<label class="mr-2">Price</label>
 							<input class="form-control form-control-sm" placeholder="Min" type="number">
 							<span class="px-2"> - </span>
 							<input class="form-control form-control-sm" placeholder="Max" type="number">
-							<button type="submit" class="btn btn-sm ml-2 bg-success">GO</button>
+							<button type="submit" class="btn btn-sm ml-2 btn-success" type="submit" style="margin-top: 0px">GO</button>
 						</div>
 					</li>
 				</ul>
@@ -202,7 +201,7 @@
 						</div>
 					</figcaption>
 					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
 						<div class="price-wrap h5">
 							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
 						</div>
@@ -229,14 +228,39 @@
 						</div>
 					</figcaption>
 					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
 						<div class="price-wrap h5">
 							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
 						</div>
 					</div>
 				</figure>
-			</div>
-			<div class="col-md-4">
+			</div><div class="col-md-4">
+				<figure class="card card-product"> 
+					<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>"></div>
+					<figcaption class="info-wrap">
+						<h4 class="">Another name of item</h4>
+						<p class="desc">Some small description goes here</p>
+						<div class="rating-wrap">
+							<ul class="rating-stars">
+								<li style="width:80%" class="stars-active"> 
+									<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+								</li>
+								<li>
+									<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+								</li>
+							</ul>
+							<div class="label-rating">132 reviews</div>
+							<div class="label-rating">154 orders </div>
+						</div>
+					</figcaption>
+					<div class="bottom-wrap">
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<div class="price-wrap h5">
+							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
+						</div>
+					</div>
+				</figure>
+			</div><div class="col-md-4">
 				<figure class="card card-product">
 					<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>"></div>
 					<figcaption class="info-wrap">
@@ -256,14 +280,13 @@
 						</div>
 					</figcaption>
 					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
 						<div class="price-wrap h5">
 							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
 						</div>
 					</div>
 				</figure>
-			</div>
-			<div class="col-md-4">
+			</div><div class="col-md-4">
 				<figure class="card card-product">
 					<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>"></div>
 					<figcaption class="info-wrap">
@@ -283,14 +306,13 @@
 						</div>
 					</figcaption>
 					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
 						<div class="price-wrap h5">
 							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
 						</div>
 					</div>
 				</figure>
-			</div>
-			<div class="col-md-4">
+			</div><div class="col-md-4">
 				<figure class="card card-product">
 					<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>"></div>
 					<figcaption class="info-wrap">
@@ -310,34 +332,7 @@
 						</div>
 					</figcaption>
 					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
-						<div class="price-wrap h5">
-							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<div class="col-md-4">
-				<figure class="card card-product">
-					<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>"></div>
-					<figcaption class="info-wrap">
-						<h4 class="">Another name of item</h4>
-						<p class="desc">Some small description goes here</p>
-						<div class="rating-wrap">
-							<ul class="rating-stars">
-								<li style="width:80%" class="stars-active"> 
-									<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-								</li>
-								<li>
-									<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-								</li>
-							</ul>
-							<div class="label-rating">132 reviews</div>
-							<div class="label-rating">154 orders </div>
-						</div>
-					</figcaption>
-					<div class="bottom-wrap">
-						<a href="" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
+						<a href="<?php echo base_url('product-detail') ?>" class="btn btn-sm btn-success float-right">Pesan Sekarang</a>	
 						<div class="price-wrap h5">
 							<span class="price-new">$1280</span> <del class="price-old">$1980</del>
 						</div>
@@ -346,9 +341,6 @@
 			</div>
 		</div>
 	</div>
-</section>
-<section id="footer">
-	<center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
 </section>
 <?php view('partial/footer') ?>
 <script src="<?php echo base_url('plugins/fancybox/fancybox.min.js') ?>" type="text/javascript"></script>

@@ -86,8 +86,5 @@
 		<h5><span style="color: #03ad23">Come </span>Join Us</h5>
 	</div>
 </section>
-<section id="footer">
-	<center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
-</section>
 
 <?php view('partial/footer') ?>

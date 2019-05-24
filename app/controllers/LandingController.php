@@ -38,9 +38,15 @@ class LandingController
     }
     function marketplace(){
     	$data = [
-    		'tittle' => 'marketplace'
+    		'title' => 'marketplace'
     	];
     	return view('landing/marketplace',$data);
+    }
+    function product_detail(){
+    	$data = [
+    		'title' => 'product-detail'
+    	];
+    	return view('landing/product-detail',$data);
     }
 
 
