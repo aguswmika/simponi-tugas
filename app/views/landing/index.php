@@ -44,8 +44,4 @@
 	<h1 class="title">Berita</h1>
 </section>
 
-<section id="footer">
-    <center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
-</section>
-
 <?php view('partial/footer') ?>

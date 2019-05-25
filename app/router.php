@@ -24,6 +24,7 @@ $routes['contact-us'] = 'LandingController@kontak';
 $routes['blog'] = 'LandingController@blog';
 $routes['edukasi'] = 'LandingController@edukasi';
 $routes['marketplace'] = 'LandingController@marketplace';
+$routes['product-detail'] = 'LandingController@product_detail';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';
