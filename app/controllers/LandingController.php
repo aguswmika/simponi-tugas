@@ -88,6 +88,7 @@ class LandingController
 	}
 
 	function register(){
+		
         checkIfLogin();
 
         $data = [
