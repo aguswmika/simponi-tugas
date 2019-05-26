@@ -36,6 +36,18 @@ class LandingController
     	];
     	return view('landing/edukasi', $data);
     }
+    function marketplace(){
+    	$data = [
+    		'title' => 'marketplace'
+    	];
+    	return view('landing/marketplace',$data);
+    }
+    function product_detail(){
+    	$data = [
+    		'title' => 'product-detail'
+    	];
+    	return view('landing/product-detail',$data);
+    }
 
 
 
@@ -82,6 +94,7 @@ class LandingController
 	}
 
 	function register(){
+		
         checkIfLogin();
 
         $data = [

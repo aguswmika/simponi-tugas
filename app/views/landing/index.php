@@ -14,7 +14,7 @@
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a href="#">
+				<a href="<?php echo base_url('marketplace') ?>">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">jual/beli</h3> -->
 						<img src="<?php echo base_url('img/jualbeli.jpg') ?>" style="img-fluid" alt="">
@@ -42,10 +42,6 @@
 </section>
 <section id="blog">
 	<h1 class="title">Berita</h1>
-</section>
-
-<section id="footer">
-    <center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
 </section>
 
 <?php view('partial/footer') ?>

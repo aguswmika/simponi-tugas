@@ -12,6 +12,28 @@ class Akun{
 		}
 	}
 
+	function getById($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    akun
+                    LEFT JOIN petani ON petani.id_user = akun.id
+                    WHERE akun.username = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
 	function tambah(){
 	    try{
             DB::connection()->beginTransaction();

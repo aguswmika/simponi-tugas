@@ -23,23 +23,40 @@ $routes['why-simponi'] = 'LandingController@whysimponi';
 $routes['contact-us'] = 'LandingController@kontak';
 $routes['blog'] = 'LandingController@blog';
 $routes['edukasi'] = 'LandingController@edukasi';
+$routes['marketplace'] = 'LandingController@marketplace';
+$routes['product-detail'] = 'LandingController@product_detail';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';
 
 // edukasi
-$routes['control-panel/edukasi'] = 'EdukasiController@index';
+$routes['control-panel/edukasi'] 		 = 'EdukasiController@index';
+$routes['control-panel/edukasi/add']     = 'EdukasiController@add';
+$routes['control-panel/edukasi/create']  = 'EdukasiController@create';
+$routes['control-panel/edukasi/destroy'] = 'EdukasiController@destroy';
+$routes['control-panel/edukasi/edit/:id']	= 'EdukasiController@edit';
 
-// pengguna
-$routes['control-panel/pengguna'] = 'PenggunaController@index';
+// kategori
 
 $routes['control-panel/kategori-edukasi'] = 'KategoriEdukasiController@index';
 $routes['control-panel/kategori-edukasi/create'] = 'KategoriEdukasiController@create';
 $routes['control-panel/kategori-edukasi/add'] = 'KategoriEdukasiController@add';
+$routes['control-panel/kategori-edukasi/edit/:id'] = 'KategoriEdukasiController@edit';
+$routes['control-panel/kategori-edukasi/update'] = 'KategoriEdukasiController@update';
+$routes['control-panel/kategori-edukasi/destroy'] = 'KategoriEdukasiController@destroy';
 
+//kategori produk
 $routes['control-panel/kategori-produk'] = 'KategoriProdukController@index';
+$routes['control-panel/kategori-produk/create'] = 'KategoriProdukController@create';
+$routes['control-panel/kategori-produk/add'] = 'KategoriProdukController@add';
+$routes['control-panel/kategori-produk/edit/:id'] = 'KategoriProdukController@edit';
+$routes['control-panel/kategori-produk/destroy'] = 'KategoriProdukController@destroy';
+//produk
 $routes['control-panel/produk'] = 'ProdukController@index';
 
+
+//pengguna
+$routes['control-panel/pengguna'] = 'PenggunaController@index';
 $routes['control-panel/pengguna/add'] = 'PenggunaController@add';
 $routes['control-panel/pengguna/create'] = 'PenggunaController@create';
 $routes['control-panel/pengguna/edit/:id'] = 'PenggunaController@edit';

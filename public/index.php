@@ -89,6 +89,6 @@ foreach ($routes as $route_key => $route_values) {
 }
 
 if($found == 0){
-	view('404');
+	abort(404);
 }
 

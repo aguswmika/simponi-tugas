@@ -47,7 +47,7 @@ class Table{
             $this->datas = $prep->fetchAll(PDO::FETCH_ASSOC);
             return true;
         } catch (PDOException $e) {
-            return false;
+            return $e->getMessage();
         }
     }
 
@@ -122,7 +122,8 @@ class Table{
     }
 
     function run(){
-        if($this->runQuery()){
+        $res = $this->runQuery();
+        if($res){
             if(count($this->search) > 0) {
                 $this->table .= '<div class="input-group input-group-sm" style="width: 150px;margin-bottom: 15px;"><form method="get" style="display: inline-block"><input type="text" name="search" class="form-control pull-right" placeholder="Search"><div class="input-group-btn" style="position: absolute;right:36px;top: 1px;font-size: 0;white-space: nowrap;"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div></form></div>';
             }
@@ -161,7 +162,7 @@ class Table{
 
             return $this->table;
         }else{
-            return 'Kesalahan';
+            return $res;
         }
     }
 

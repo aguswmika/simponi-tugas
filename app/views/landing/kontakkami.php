@@ -45,7 +45,5 @@
 	</div>
   </div>
 </div>
-<section id="footer">
-    <center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
-</section>
+
 <?php view('partial/footer', $data) ?>

@@ -1,26 +1,20 @@
 <?php
 Class KategoriPembelajaran{
-	function login($user, $pass){
-		try {
-			$sql = "SELECT * FROM akun WHERE username = ? AND password = ?";
-			$prep = DB::connection()->prepare($sql);
-			$prep->execute([$user, $pass]);
-			return $prep->rowCount();
-		} catch (PDOException $e) {
-			msg('Kesalahan : '.$e->getMessage(), 'danger');
-			redirect('login');
-		}
-	}
-
 	function tambah(){
 	    try{
             $nama = Input::post('nama');
             $deskripsi = Input::post('deskripsi');
+            $file = Input::file('foto')->upload('public/uploads');
+            $slug = url_slug($nama);
 
-            $sql = "INSERT INTO kategori_pembelajaran(nama, deskripsi) VALUES(?, ?)";
+            if($file == false){
+                msg('Gambar tidak bisa masuk', 'warning');
+                return;
+            }
+            $sql = "INSERT INTO kategori_pembelajaran(nama,deskripsi,icon,slug) VALUES(?,?,?,?)";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama, $deskripsi]);
+            $prep->execute([$nama, $deskripsi,str_replace('public/', '', $file),$slug]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
@@ -30,6 +24,53 @@ Class KategoriPembelajaran{
         }catch (PDOException $e){
             msg('Kesalahan : '.$e->getMessage(), 'danger');
             redirect('control-panel/kategoriedukasi/add');
+        }
+    }
+
+    function getById($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    kategori_pembelajaran
+                    WHERE pembelajaran.slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute();
+
+            if($prep->rowCount()){
+                return $prep->fetchAll(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+    public function hapus(){
+        try{
+
+            //belum jadi
+            DB::connection()->beginTransaction();
+
+            $id = Input::post('slug');
+           
+            $sql = "DELETE FROM kategori_pembelajaran WHERE slug = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                msg('Data berhasil dihapus', 'info');
+            }else{
+                msg('Data gagal dihapus', 'danger');
+            }
+
+            DB::connection()->commit();
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(), 'danger');
+            redirect('control-panel/kategori-produk');
         }
     }
 }

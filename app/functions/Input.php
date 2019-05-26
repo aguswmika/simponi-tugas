@@ -41,26 +41,20 @@ class Input
     }
 
     function upload($path, $new_file = ''){
+
     	$folder = BASE_PATH.$path;
 
-    	$new_path = '/'.ltrim($folder, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension);
+    	$new_path = ''.ltrim($folder, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension);
 
 		if(!file_exists($folder)){
 			mkdir($folder, 0777, true);
 		}
-
 		if(move_uploaded_file($this->file['tmp_name'], $new_path)){
+
     		return ltrim($path, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension);
     	}else{
     		return false;
     	}
     }
-
-
-
-
-
-
-
 
 }

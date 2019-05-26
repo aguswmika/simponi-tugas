@@ -14,7 +14,8 @@
                 <h1 class="box-title">List</h1>
             </div>
             <div class="box-body">
-
+                <a href="<?php echo base_url('control-panel/edukasi/add') ?>" class="btn btn-info" style="margin-bottom: 25px;">Tambah</a>
+                <?php echo $tabel ?>
             </div>
         </div>
 

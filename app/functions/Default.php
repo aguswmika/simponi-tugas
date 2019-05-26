@@ -124,3 +124,22 @@ if(!function_exists('old')){
         return $session;
     }
 }
+
+if(!function_exists('abort')){
+    function abort($key){
+        view('errors/'.$key);
+        die();
+    }
+}
+
+if(!function_exists('url_slug')){
+    function url_slug($text='') {
+        $text = trim($text);
+        if (empty($text)) return '';
+            $text = preg_replace("/[^a-zA-Z0-9\-\s]+/", "", $text);
+            $text = strtolower(trim($text));
+            $text = str_replace(' ', '-', $text);
+            $text = $text_ori = preg_replace('/\-{2,}/', '-', $text);
+        return substr($text,0,100);
+    }
+}
