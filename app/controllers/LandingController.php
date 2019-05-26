@@ -55,13 +55,13 @@ class LandingController
     	$data = [
     		'title' => 'shopping-cart'
     	];
-    	return view('landing/shopping-cart');
+    	return view('landing/shopping-cart',$data);
     }
     function forum(){
     	$data = [
     		'title' => 'forum'
     	];
-    	return view('landing/forum');
+    	return view('landing/forum',$data);
     }
 
 
