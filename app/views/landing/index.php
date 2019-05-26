@@ -42,7 +42,7 @@
 	</div>
 </section>
 <section id="blog" class="py-5 text-center">
-	<h1 class="title why-mid-tittle">Kelebihan Kami</h1>
+	<h1 class="title why-mid-tittle"><span style="color: #9fbd12">Kelebihan </span> Kami</h1>
 	<div class="container"> 
 		<br>
 		<p class="text-muted mb-5 text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
@@ -94,7 +94,7 @@
 </section>
 <section class="main">
 	<div class="container mt-4">
-		<h1 class="title why-mid-tittle">From The Blog</h1>
+		<h1 class="title why-mid-tittle">Tengok <span style="color: #9fbd12">Sedikit </span></h1>
 		<br>
 		<div class="row">
 			<div class="card-columns">
@@ -123,7 +123,7 @@
 						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
-				<div class="card shadow border-0 bg-primary text-white text-center p-3">
+				<div class="card shadow border-0 text-white text-center p-3" style="background-color: #9fbd12">
 					<blockquote class="blockquote mb-0">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
 						<footer class="blockquote-footer">
@@ -165,9 +165,9 @@
 	</div>
 </section>
 <!-- Header -->
-<section class="bg-success text-center py-5 mb-4">
+<section class="text-center py-5 mb-4" style="background-color: #9fbd12">
 	<div class="container">
-		<h1 class="font-weight-light text-white why-mid-tittle">Meet the Team</h1>
+		<h1 class="font-weight-light text-white why-mid-tittle">Tim <span style="color: black"> Pengembang </span></h1>
 	</div>
 </section>
 <div class="container">
