@@ -32,29 +32,50 @@ class Input
     	$this->file = $file;
     }
 
-    function getName(){
-    	return str_replace('.'.$this->getExtension(), '', $this->file['name']);
+    function getName($file){
+    	return str_replace('.'.$this->getExtension($file), '', $file);
     }
 
-    function getExtension(){
-    	return pathinfo($this->file['name'], PATHINFO_EXTENSION);
+    function getExtension($file){
+    	return pathinfo($file, PATHINFO_EXTENSION);
     }
 
     function upload($path, $new_file = ''){
 
-    	$folder = BASE_PATH.$path;
+    	$folder = BASE_PATH.ltrim($path, '/');
 
-    	$new_path = ''.ltrim($folder, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension);
+        if(!file_exists($folder)){
+            mkdir($folder, 0777, true);
+        }
 
-		if(!file_exists($folder)){
-			mkdir($folder, 0777, true);
-		}
-		if(move_uploaded_file($this->file['tmp_name'], $new_path)){
+        if(is_array($this->file['name'])){
+            $arr_url = [];
 
-    		return ltrim($path, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension);
-    	}else{
-    		return false;
-    	}
+            for($i = 0; $i< count($this->file['name']); $i++){
+                $new_path = $folder.'/'.(empty($new_file[$i]) ? $this->file['name'][$i] : $new_file[$i].$this->getExtension($this->file['name'][$i]));
+
+                if(move_uploaded_file($this->file['tmp_name'][$i], $new_path)){
+                    array_push($arr_url, ltrim($path, '/').'/'.(empty($new_file) ? $this->file['name'][$i] : $new_file.$this->getExtension($this->file['name'][$i])));
+                }else{
+                    foreach ($arr_url as $item) {
+                        unlink($item);
+                    }
+
+                    return false;
+                }
+            }
+
+            return $arr_url;
+        }else{
+            $new_path = $folder.'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension($this->file['name']));
+
+            if(move_uploaded_file($this->file['tmp_name'], $new_path)){
+                return ltrim($path, '/').'/'.(empty($new_file) ? $this->file['name'] : $new_file.$this->getExtension($this->file['name']));
+            }else{
+                return false;
+            }
+        }
+
     }
 
 }

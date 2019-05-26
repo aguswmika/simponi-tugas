@@ -4,8 +4,11 @@
 		function __construct(){
 			checkIfNotLogin();
 			$this->produk = model('produk');
+<<<<<<< HEAD
         	$this->satuan = model('satuan');
         	$this->kategoriProduk= model('kategoriproduk');
+=======
+>>>>>>> 55cb348b70e460d0dc06be8f35c1f09ebe301f2d
 		}
 		public function index(){
 			$tabel = new Table([
@@ -58,14 +61,13 @@
 	            ],
 	            'harga_jual' => [
 	            	'integer'  => true,
-	                'required' => true
 	            ],
 	            'harga_beli' => [
 	            	'integer'  => true,
-	                'required' => true
 	            ],
 	            'stok' => [
 	            	'integer'  => true,
+<<<<<<< HEAD
 	                'required' => true
 	            ],
 	            'thumbnail_foto' => [
@@ -76,6 +78,8 @@
 	            ],
 	            'id_kategori_produk' => [
 	            	'required' => true
+=======
+>>>>>>> 55cb348b70e460d0dc06be8f35c1f09ebe301f2d
 	            ]
 	        ];
 

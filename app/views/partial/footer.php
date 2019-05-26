@@ -49,6 +49,7 @@
 					</aside>
 				</div>
 	<div style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</div>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.492291371422!2d12.4922309!3d41.8902102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1524815927977" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
 	<script src="<?php echo base_url('js/jquery.js') ?>"></script>
 	<script src="<?php echo base_url('js/popper.js') ?>"></script>

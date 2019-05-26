@@ -53,75 +53,7 @@
 									</td>
 									<td class="text-right"> 
 										<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-										<a href="" class="btn btn-outline-danger"> × Remove</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<figure class="media">
-											<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>" class="img-thumbnail img-sm"></div>
-											<figcaption class="media-body">
-												<h6 class="dlist-inline" style="margin: 0px">Barang #</h6>
-												<dl class="dlist-inline small">
-												</dl>
-												<dl class="dlist-inline small">
-													<dt>Warna : </dt>
-													<dd>#</dd>
-												</dl>
-											</figcaption>
-										</figure> 
-									</td>
-									<td> 
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>	
-											<option>3</option>	
-											<option>4</option>	
-										</select> 
-									</td>
-									<td> 
-										<div class="price-wrap"> 
-											<var class="price">Rp 15.000</var> 
-											<small class="text-muted">(Rp 15.000each)</small> 
-										</div> <!-- price-wrap .// -->
-									</td>
-									<td class="text-right"> 
-										<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-										<a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<figure class="media">
-											<div class="img-wrap"><img src="<?php echo base_url('img/1.jpg') ?>" class="img-thumbnail img-sm"></div>
-											<figcaption class="media-body">
-												<h6 class="dlist-inline" style="margin: 0px">Barang #</h6>
-												<dl class="dlist-inline small">
-												</dl>
-												<dl class="dlist-inline small">
-													<dt>Warna : </dt>
-													<dd>#</dd>
-												</dl>
-											</figcaption>
-										</figure> 
-									</td>
-									<td> 
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>	
-											<option>3</option>	
-											<option>4</option>	
-										</select> 
-									</td>
-									<td> 
-										<div class="price-wrap"> 
-											<var class="price">Rp 15.000</var> 
-											<small class="text-muted">(Rp 15.000each)</small> 
-										</div> <!-- price-wrap .// -->
-									</td>
-									<td class="text-right"> 
-										<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-										<a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
+										<a href="" class="btn btn-danger"><i class="fa fa-times"></i></a>
 									</td>
 								</tr>
 							</tbody>

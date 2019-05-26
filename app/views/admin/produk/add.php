@@ -48,11 +48,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Harga Jual</label>
-                                <input type="text" name="hargajual" class="form-control" value="<?php echo old('harga_jual') ?>">
+                                <input type="number" name="harga_jual" class="form-control" value="<?php echo old('harga_jual') === null ? 0 : old('harga_jual') ?>">
                             </div>
                             <div class="form-group">
                                 <label>Harga Beli</label>
-                                <input type="text" name="hargajual" class="form-control" value="<?php echo old('harga_beli') ?>">
+                                <input type="number" name="harga_beli" class="form-control" value="<?php echo old('harga_beli') === null ? 0 : old('harga_beli') ?>">
                             </div>
                             <div class="form-group">
                                 <label>Stok</label>
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="upload-btn-wrapper">
                                     <button class="btn btn-info btn-xs" id="labelFoto2">Tambahkan foto</button>
-                                    <input type="file" id="inputFoto2" name="foto[]" accept=".png, .jpg, .jpeg" multiple=""  />
+                                    <input type="file" id="inputFoto2" name="gallery[]" accept=".png, .jpg, .jpeg" multiple=""  />
                                 </div>
 
                             </div>
