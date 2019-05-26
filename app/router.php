@@ -55,6 +55,8 @@ $routes['control-panel/kategori-produk/edit/:id'] = 'KategoriProdukController@ed
 $routes['control-panel/kategori-produk/destroy'] = 'KategoriProdukController@destroy';
 //produk
 $routes['control-panel/produk'] = 'ProdukController@index';
+$routes['control-panel/produk/create'] = 'ProdukController@create';
+$routes['control-panel/produk/add'] = 'ProdukController@add';
 
 
 //pengguna
