@@ -1,5 +1,6 @@
 <?php
 	class ProdukController{
+		private $produk;
 		function __construct(){
 			checkIfNotLogin();
 		}
@@ -31,5 +32,51 @@
 
 			return view('admin/produk/index',$data);
 		}
-	}
+	
+		public function add(){
+        	$data = [
+            	'title'     => 'Tambah Produk'
+            
+        	];
+
+       		return view('admin/produk/add', $data);
+    	}
+    	public function create(){
+	         $config = [
+	            'nama' => [
+
+	                'required' => true
+	            ],
+	            'harga_jual' => [
+	            	'integer'  => true,
+	                'required' => true
+	            ],
+	            'harga_beli' => [
+	            	'integer'  => true,
+	                'required' => true
+	            ],
+	            'stok' => [
+	            	'integer'  => true,
+	                'required' => true
+	            ],
+	            'thumbnail_foto' => [
+	            	'required' => true,
+	            ],
+	            'gallery_foto' => [
+	            	'required' => true
+	            ]
+	        ];
+
+	        $valid = new Validation($config);
+
+	        if($valid->run()){
+	            $this->produk->tambah();
+
+	            redirect('control-panel/produk/add');
+	        }else{
+	            msg($valid->getErrors(), 'danger');
+	            redirect('control-panel/produk/add');
+	        }
+   		}
+ }
 ?>

@@ -27,7 +27,7 @@ Class KategoriPembelajaran{
         }
     }
 
-    function getById($id){
+    public function getKategori(){
         try {
             $sql = "SELECT 
                     * 
@@ -50,7 +50,7 @@ Class KategoriPembelajaran{
     public function hapus(){
         try{
 
-            //belum jadi
+            //belum jadiD
             DB::connection()->beginTransaction();
 
             $id = Input::post('slug');
