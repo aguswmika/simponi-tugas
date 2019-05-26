@@ -23,10 +23,7 @@ Class KategoriPembelajaran{
 
     function getKategori(){
         try {
-            $sql = "SELECT 
-                    * 
-                    FROM 
-                    kategori_pembelajaran";
+            $sql = "SELECT * FROM kategori_pembelajaran";
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 

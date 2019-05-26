@@ -1,15 +1,18 @@
 <?php
 class LandingController
 {
-	private $akun;
+	private $akun, $berita;
 
 	function __construct()
 	{
 		$this->akun = model('akun');
-
+		$this->berita = model('kategoripembelajaran');
 	}
 	function index(){
-		return view('landing/index');
+		$data = [
+			'berita' => $this->berita->getKategori()
+		];
+		return view('landing/index', $data);
 	}
 
 	function whysimponi(){

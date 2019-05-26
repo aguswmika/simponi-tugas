@@ -42,6 +42,10 @@
 </section>
 <section id="blog">
 	<h1 class="title">Berita</h1>
+	<?php foreach ($berita as $item) { ?>
+		<div><?php echo $item->id ?></div>
+		<div><?php echo $item->nama ?></div>
+	<?php } ?>
 </section>
 
 <section id="footer">
