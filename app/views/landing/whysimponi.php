@@ -15,11 +15,11 @@
 
 			<div class="col-md-6">
 				<div class="why-container">
-					<h1><span style="color: #03ad23">Siapa </span>Kita?</h1>
+					<h1><span style="color: #9fbd12">Siapa </span>Kita?</h1>
 					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum autem laboriosam corporis facere rem, sunt nobis nulla iure nam labore? In, tempora ipsa excepturi distinctio voluptatem aspernatur aperiam, praesentium ex!</p>
 				</div>
 				<div class="why-container">
-					<h1><span style="color: #03ad23">Misi </span>Kami</h1>
+					<h1><span style="color: #9fbd12">Misi </span>Kami</h1>
 					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum autem laboriosam corporis facere rem, sunt nobis nulla iure nam labore? In, tempora ipsa excepturi distinctio voluptatem aspernatur aperiam, praesentium ex!</p>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 </section>
 <section>
 	<div class="container">
-		<center><div class="why-mid-tittle"><span style="color: #03ad23" >Asah</span> Kemampuanmu Disini</div></center>
+		<center><div class="why-mid-tittle"><span style="color: #9fbd12" >Asah</span> Kemampuanmu Disini</div></center>
 		<br>
 		<center><p>Gunakan Pengetahuan, Pengalaman, Dan Penelitian Industri Kami Yang Luas Untuk Mengetahui Lebih Banyak! Kami telah Menyusun Artikel Bermanfaat dan Posting Blog Untuk Memandu Anda Dalam Perjalanan Anda..</p></center>
 	</div>

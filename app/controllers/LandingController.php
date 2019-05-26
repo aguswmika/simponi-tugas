@@ -57,6 +57,12 @@ class LandingController
     	];
     	return view('landing/shopping-cart');
     }
+    function forum(){
+    	$data = [
+    		'title' => 'forum'
+    	];
+    	return view('landing/forum');
+    }
 
 
 
