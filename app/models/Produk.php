@@ -5,8 +5,7 @@ class Produk{
             $sql = "SELECT 
                     * 
                     FROM 
-                    produk
-                    WHERE produk.id = ?";
+                    produk";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
 
@@ -30,12 +29,17 @@ class Produk{
             $stok       = Input::post('stok');
             $thumbnail_foto = Input::file('thumbnail_foto')->upload('public/uploads');
            // $gallery_foto = Input::file('gallery_foto')->upload('public/uploads');
+            $id_satuan = Input::post('id_satuan');
+            $id_kategori_produk = Input::post('id_kategori_produk');
 
-            if($thumbnail_foto === false && $gallery_foto==false){
+            if($thumbnail_foto === false){
                 msg('Gambar tidak bisa masuk', 'warning');
                 return;
             }
+            $sql = "INSERT INTO produk(nama,harga_jual,harga_beli,thumbnail_foto,gallery_foto,stok,id_satuan,id_kategori_produk) VALUES(?,?,?,?,?,?,?)";
 
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$nama, $harga_jual,$harga_beli,$stok,str_replace('public/', '', $thumbnail_foto),$id_satuan,$id_kategori_produk]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');

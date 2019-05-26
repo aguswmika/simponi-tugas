@@ -79,7 +79,7 @@ class EdukasiController
                 'required' => true,
                 'integer'  => true
             ],
-            'jenis_pembelajaran' => [
+            'tipe_pembelajaran' => [
                 'required' => true
             ],
             'kategori' => [

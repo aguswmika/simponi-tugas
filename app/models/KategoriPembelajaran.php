@@ -32,8 +32,7 @@ Class KategoriPembelajaran{
             $sql = "SELECT 
                     * 
                     FROM 
-                    kategori_pembelajaran
-                    WHERE pembelajaran.slug = ?";
+                    kategori_pembelajaran";
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 
