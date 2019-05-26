@@ -175,7 +175,7 @@
 									</div>
 								</div>
 								<hr>
-								<a href="#" class="btn  btn-success">Beli sekarang</a>
+								<a href="<?php echo base_url('shopping-cart') ?>" class="btn  btn-success">Beli sekarang</a>
 								<a href="#" class="btn  btn-outline-success"> <i class="fas fa-shopping-cart text-dark"></i> Add to cart </a>
 							</article> 
 						</aside>
@@ -250,6 +250,6 @@
 	</article>
 </div>
 </section>
-<?php view('partial/footer') ?>
 <script src="<?php echo base_url('plugins/fancybox/fancybox.min.js') ?>" type="text/javascript"></script>
 <script src="<?php echo base_url('plugins/owlcarousel/owl.carousel.min.js') ?>"></script>
+<?php view('partial/footer') ?>

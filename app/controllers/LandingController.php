@@ -48,6 +48,12 @@ class LandingController
     	];
     	return view('landing/product-detail',$data);
     }
+    function cart(){
+    	$data = [
+    		'title' => 'shopping-cart'
+    	];
+    	return view('landing/shopping-cart');
+    }
 
 
 

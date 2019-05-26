@@ -11,13 +11,13 @@
 					<a class="nav-link" href="<?php echo base_url()?>">beranda</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">cara kerja</a>
+					<a class="nav-link" href="<?php echo base_url('edukasi') ?>">cara kerja</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo base_url('why-simponi') ?>">kenapa simponi?</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">produk kami</a>
+					<a class="nav-link" href="<?php echo base_url('marketplace') ?>">produk kami</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo base_url('blog') ?>">blog</a>
