@@ -7,22 +7,22 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav">
-				<li class="nav-item active">
+				<li class="nav-item <?php echo (Input::url(0) === '' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url()?>">beranda</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item <?php echo (Input::url(0) === 'edukasi' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('edukasi') ?>">cara kerja</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item <?php echo (Input::url(0) === 'why-simponi' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('why-simponi') ?>">kenapa simponi?</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item <?php echo (Input::url(0) === 'marketplace' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('marketplace') ?>">produk kami</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item <?php echo (Input::url(0) === 'blog' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('blog') ?>">blog</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item <?php echo (Input::url(0) === 'contact-us' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('contact-us') ?>">kontak kami</a>
 				</li>
 			</ul>
