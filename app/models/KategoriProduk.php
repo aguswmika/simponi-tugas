@@ -1,20 +1,12 @@
 <?php
-Class KategoriPembelajaran{
+Class KategoriProduk{
 	function tambah(){
 	    try{
             $nama = Input::post('nama');
-            $deskripsi = Input::post('deskripsi');
-            $file = Input::file('foto')->upload('public/uploads');
-            $slug = url_slug($nama);
-
-            if($file == false){
-                msg('Gambar tidak bisa masuk', 'warning');
-                return;
-            }
-            $sql = "INSERT INTO kategori_pembelajaran(nama,deskripsi,icon,slug) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO kategori_produk(nama) VALUES(?)";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama, $deskripsi,str_replace('public/', '', $file),$slug]);
+            $prep->execute([$nama]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
@@ -23,13 +15,16 @@ Class KategoriPembelajaran{
             }
         }catch (PDOException $e){
             msg('Kesalahan : '.$e->getMessage(), 'danger');
-            redirect('control-panel/kategoriedukasi/add');
+            redirect('control-panel/kategori-produk/add');
         }
     }
 
-    public function getKategori(){
+    function getById(){
         try {
-            $sql = "SELECT * FROM kategori_pembelajaran";
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    kategori_produk";
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 
@@ -43,15 +38,13 @@ Class KategoriPembelajaran{
             return false;
         }
     }
-    public function hapus(){
+     public function hapus(){
         try{
-
-            //belum jadiD
             DB::connection()->beginTransaction();
 
-            $id = Input::post('slug');
+            $id = Input::post('id');
            
-            $sql = "DELETE FROM kategori_pembelajaran WHERE slug = ?";
+            $sql = "DELETE FROM kategori_produk WHERE id = ?";
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);

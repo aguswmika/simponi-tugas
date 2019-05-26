@@ -10,10 +10,25 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="content-container">
-					<a href="#">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter">
 						<div class="picture-container feature-card">
 							<img src="<?php echo base_url('img/1_seed.jpg') ?> " alt="" class="img-fluid">
-						</a>
+						</div>
+					</a>
+					<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					  	<div class="modal-dialog modal-dialog-centered" role="document">
+					    	<div class="modal-content">
+					      		<div class="modal-header">
+					        		<h5 class="modal-title" id="exampleModalCenterTitle">Peralatan dan bahan</h5>
+					        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          			<span aria-hidden="true">&times;</span>
+					        		</button>
+					      		</div>
+					     		<div class="modal-body">
+					        		<h6>1. Cangkul</h6>
+					      		</div>
+					    	</div>
+					  	</div>
 					</div>
 					<div class="caption-container">
 						<h4>Persiapan Alat dan Bahan</h4>
@@ -85,9 +100,6 @@
 	<div class="container  education-title">
 		<h5><span style="color: #03ad23">Come </span>Join Us</h5>
 	</div>
-</section>
-<section id="footer">
-	<center style="color: #ffffff">simponi. dibuat dengan <span style="color: #ff7066">❤</span> oleh kelompok 5</center>
 </section>
 
 <?php view('partial/footer') ?>

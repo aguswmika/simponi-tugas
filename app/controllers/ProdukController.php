@@ -1,7 +1,9 @@
 <?php
 	class ProdukController{
+		private $produk;
 		function __construct(){
 			checkIfNotLogin();
+			$this->produk = model('produk');
 		}
 		public function index(){
 			$tabel = new Table([
@@ -31,5 +33,42 @@
 
 			return view('admin/produk/index',$data);
 		}
-	}
+	
+		public function add(){
+        	$data = [
+            	'title'     => 'Tambah Produk'
+            
+        	];
+
+       		return view('admin/produk/add', $data);
+    	}
+    	public function create(){
+	         $config = [
+	            'nama' => [
+
+	                'required' => true
+	            ],
+	            'harga_jual' => [
+	            	'integer'  => true,
+	            ],
+	            'harga_beli' => [
+	            	'integer'  => true,
+	            ],
+	            'stok' => [
+	            	'integer'  => true,
+	            ]
+	        ];
+
+	        $valid = new Validation($config);
+
+	        if($valid->run()){
+	            $this->produk->tambah();
+
+	            redirect('control-panel/produk/add');
+	        }else{
+	            msg($valid->getErrors(), 'danger');
+	            redirect('control-panel/produk/add');
+	        }
+   		}
+ }
 ?>

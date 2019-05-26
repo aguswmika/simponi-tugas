@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="<?php echo base_url('css/bootstrap.min.css') ?>">
 	<link href="<?php echo base_url('fonts/fontawesome/css/fontawesome-all.min.css') ?>" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url('css/custom.css') ?>">
+	<link href="<?php echo base_url('css/ui.css') ?>" rel="stylesheet" type="text/css"/>
+
+
 
 </head>
 <body>

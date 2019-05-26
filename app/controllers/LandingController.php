@@ -41,9 +41,21 @@ class LandingController
     }
     function marketplace(){
     	$data = [
-    		'tittle' => 'marketplace'
+    		'title' => 'marketplace'
     	];
     	return view('landing/marketplace',$data);
+    }
+    function product_detail(){
+    	$data = [
+    		'title' => 'product-detail'
+    	];
+    	return view('landing/product-detail',$data);
+    }
+    function cart(){
+    	$data = [
+    		'title' => 'shopping-cart'
+    	];
+    	return view('landing/shopping-cart');
     }
 
 
@@ -91,6 +103,7 @@ class LandingController
 	}
 
 	function register(){
+		
         checkIfLogin();
 
         $data = [

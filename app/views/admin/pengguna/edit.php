@@ -40,8 +40,10 @@
                         <?php echo Session::flash('error'); ?>
                         <form action="<?php echo base_url('control-panel/pengguna/create') ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
+                                v
                                 <label>Nama Depan</label>
-                                <input type="text" name="nama_depan" class="form-control" value="<?php echo old('nama_depan') ?>">
+                                <input type="text" name="nama_depan" class="form-control" value="<?php echo old('nama_depan') ?> 
+                                ">
                             </div>
                             <div class="form-group">
                                 <label>Nama Belakang</label>

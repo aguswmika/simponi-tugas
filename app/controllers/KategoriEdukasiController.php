@@ -18,13 +18,20 @@ class KategoriEdukasiController{
 		})
 		->addRow('Nama','nama')
 		->addRow('Deskripsi','deskripsi')
-		->addRow('Icon','icon')
 		->addRow('Aksi',function($data){
-			return '<a href="'.base_url('kategori-edukasi/edit/'.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>';
+			return '
+				<a href="'.base_url('control-panel/kategori-edukasi/edit/'.$data['slug']).'" class="btn btn-warning btn-xs">Edit</a>
+                    <form action="'.base_url('control-panel/kategori-edukasi/destroy').'" method="post" style="display: inline">
+                        <input type="hidden" name="slug" value="'.$data['slug'].'">
+                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini?\')">Hapus</button>
+                    </form>
+
+			';
 		})
 		->search([
 			'id',
-			'nama'
+			'nama',
+			'slug'
 		]);
 		$data = [
 				'title' => 'Kategori Edukasi',
@@ -60,6 +67,25 @@ class KategoriEdukasiController{
             msg($valid->getErrors(), 'danger');
             redirect('control-panel/kategori-edukasi/add');
         }
+	}
+	public function destroy(){
+		$config = [
+            'slug' => [
+                'required' => true
+            ]
+        ];
+
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->KategoriPembelajaran->hapus();
+
+            redirect('control-panel/kategori-edukasi');
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/kategori-edukasi');
+        }
+    
 	}
 }
 ?>

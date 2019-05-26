@@ -40,4 +40,48 @@ class Edukasi{
             redirect('control-panel/edukasi/add');
         }
     }
+    function getById($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    pembelajaran
+                    WHERE pembelajaran.slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+    function hapus(){
+        try{
+            DB::connection()->beginTransaction();
+
+            $id = Input::post('slug');
+           
+            $sql = "DELETE FROM pembelajaran WHERE slug = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                msg('Data berhasil dihapus', 'info');
+            }else{
+                msg('Data gagal dihapus', 'danger');
+            }
+
+            DB::connection()->commit();
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(), 'danger');
+            redirect('control-panel/edukasi');
+        }
+    }
 }

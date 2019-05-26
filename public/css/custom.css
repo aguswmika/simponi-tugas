@@ -228,3 +228,6 @@ section{
 .contain, button {
 	margin-top: 0.2rem;
 }
+.jrk, h6 {
+	margin-left: 2rem;
+}
