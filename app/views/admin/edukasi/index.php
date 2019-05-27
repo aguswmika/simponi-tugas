@@ -7,7 +7,9 @@
             <li class="active"><i class="fa fa-book"></i> Edukasi</a></li>
         </ol>
     </section>
-
+    <section class="container-fluid">
+        <?php echo Session::flash('error'); ?>
+    </section>
     <section class="content container-fluid">
         <div class="box">
             <div class="box-header">

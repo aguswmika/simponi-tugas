@@ -112,8 +112,14 @@ class Table{
                 }
             } else {
                 foreach ($this->search as $key => $item){
-                    $this->sql .= ' OR '.$item.' LIKE ?';
+                    if($key === 0){
+                        $this->sql .= ' AND ('.$item.' LIKE ?';
+                    }else{
+                        $this->sql .= ' OR '.$item.' LIKE ?';
+                    }
                 }
+
+                $this->sql .= ')';
             }
         }
 

@@ -70,7 +70,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control" value="<?php echo old('password') ?>">
+                                <input type="password" name="password" class="form-control" value="">
                             </div>
                             <div class="form-group">
                                 <label>Foto</label><br>
