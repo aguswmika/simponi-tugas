@@ -38,22 +38,23 @@
                     </div>
                     <div class="box-body">
                         <?php echo Session::flash('error'); ?>
-                        <form action="<?php echo base_url('control-panel/edukasi/create') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('control-panel/edukasi/update/'.Input::url(3)) ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input type="text" name="judul" class="form-control" value="<?php echo old('judul') ?>">
+                                <input type="text" name="judul" class="form-control" value="<?php echo old('judul')===null ? $item->judul : old('judul') ?>">
                             </div>
                             <div class="form-group">
                                 <label>Urutan</label>
-                                <input type="number" name="urutan" class="form-control" value="<?php echo old('urutan') === null ? 1 : old('urutan') ?>">
+                                <input type="number" name="urutan" class="form-control" value="<?php echo old('urutan') === null ? $item->urutan : old('urutan') ?>">
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea name="deskripsi" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('deskripsi') ?></textarea>
+                                <textarea name="deskripsi" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('deskripsi')=== null ? $item->deskripsi : old('deskripsi') ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Jenis Pembelajaran</label>
-                                <?php $check = (old('id_kategori_pembelajaran') === null ? 'text' :  old('id_kategori_pembelajaran'))?>
+                                <?php $check = (old('jenis_pembelajaran') === null ? $item->tipe_pembelajaran :  old('jenis_pembelajaran'))
+                                ?>
                                 <div>
                                     <label style="font-weight: normal">
                                         <input type="radio" name="jenis_pembelajaran" value="text" <?php echo ($check === 'text' ? 'checked' : '' ) ?>> Text
@@ -68,23 +69,38 @@
                             </div>
                             <div class="form-group" id="text" <?php echo ($check === 'video ' ? 'style="display: none"' : '' ) ?>>
                                 <label>Konten Text</label>
-                                <textarea name="konten" id="editor" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('konten') ?></textarea>
+                                <textarea name="konten" id="editor" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('konten') === null ? $item->konten : old('konten') ?></textarea>
                             </div>
                             <div class="form-group" id="video" <?php echo ($check === 'text' ? 'style="display: none"' : '' ) ?>>
                                 <label>Konten Video</label>
-                                <input type="text" name="video" class="form-control" value="<?php echo old('video') ?>" placeholder="https://youtube.com/xHasjkn2">
+                                <input type="text" name="video" class="form-control" value="<?php echo old('video')===null ? $item->konten  : old('konten') ?>" placeholder="https://youtube.com/xHasjkn2">
                             </div>
                             <div class="form-group">
                                 <label>Kategori Pembelajaran</label>
                                 <select name="kategori" class="form-control">
-                                    <?php $check = old('kategori') ?>
+                                    <?php $check = old('kategori') === null ? $item->id_kategori_pembelajaran  : old('kategori') ?>
                                     <option value="">-- Pilih --</option>
-                                    <?php foreach ($kategori as $item) {?>
-                                        <option value="<?php echo $item->id ?>" <?php echo ($check == $item->id ? 'selected' : '' ) ?>><?php echo $item->nama ?></option>
+                                    <?php foreach ($kategori as $k) {?>
+                                        <option value="<?php echo $kategori->id ?>" <?php echo ($check == $k->id ? 'selected' : '' ) ?>><?php echo $k->nama ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
+                           <div class="form-group">
+                                <label>Status</label>
+                                <?php $check = (old('status') === null ? $item->status :  old('status'))
+                                ?>
+                                <div>
+                                    <label style="font-weight: normal">
+                                        <input type="radio" name="status" value="aktif" <?php echo ($check === 'aktif' ? 'checked' : '' ) ?>> Aktif
+                                    </label>
+                                </div>
+                                <div>
+                                    <label style="font-weight: normal">
+                                        <input type="radio" name="status" value="nonaktif" <?php echo ($check === 'nonaktif' ? 'checked' : '' ) ?>> nonaktif
+                                    </label>
+                                </div>
 
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Edit</button>
                             </div>

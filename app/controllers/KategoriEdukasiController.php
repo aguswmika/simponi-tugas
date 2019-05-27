@@ -89,5 +89,41 @@ class KategoriEdukasiController{
         }
     
 	}
+	public function edit($id){
+		$KategoriPembelajaran = $this->KategoriPembelajaran->getByIdKategoriPembelajaran($id);
+
+        if($KategoriPembelajaran === false){
+
+            abort(404);
+        }
+
+        $data = [
+            'title' => 'Edit Kategori Pembelajaran',
+            'item'  => $KategoriPembelajaran
+        ];
+
+        return view('admin/kategoriEdukasi/edit', $data);
+	}
+    function update($id){
+        $config = [
+            'nama' => [
+                'required' => true
+            ],
+             'deskripsi' => [
+                'required' => true
+            ]
+        ];
+
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->KategoriPembelajaran->edit($id);
+
+            redirect('control-panel/kategori-edukasi/edit/'.$id);
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/kategori-edukasi/'.$id);
+        }
+    }
 }
 ?>

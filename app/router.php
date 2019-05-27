@@ -39,6 +39,7 @@ $routes['control-panel/edukasi/add']     = 'EdukasiController@add';
 $routes['control-panel/edukasi/create']  = 'EdukasiController@create';
 $routes['control-panel/edukasi/destroy'] = 'EdukasiController@destroy';
 $routes['control-panel/edukasi/edit/:id']	= 'EdukasiController@edit';
+$routes['control-panel/edukasi/update/:id'] = 'EdukasiController@update';
 
 // kategori
 
@@ -46,7 +47,7 @@ $routes['control-panel/kategori-edukasi'] = 'KategoriEdukasiController@index';
 $routes['control-panel/kategori-edukasi/create'] = 'KategoriEdukasiController@create';
 $routes['control-panel/kategori-edukasi/add'] = 'KategoriEdukasiController@add';
 $routes['control-panel/kategori-edukasi/edit/:id'] = 'KategoriEdukasiController@edit';
-$routes['control-panel/kategori-edukasi/update'] = 'KategoriEdukasiController@update';
+$routes['control-panel/kategori-edukasi/update/:id'] = 'KategoriEdukasiController@update';
 $routes['control-panel/kategori-edukasi/destroy'] = 'KategoriEdukasiController@destroy';
 
 //kategori produk
@@ -55,12 +56,14 @@ $routes['control-panel/kategori-produk/create'] = 'KategoriProdukController@crea
 $routes['control-panel/kategori-produk/add'] = 'KategoriProdukController@add';
 $routes['control-panel/kategori-produk/edit/:id'] = 'KategoriProdukController@edit';
 $routes['control-panel/kategori-produk/destroy'] = 'KategoriProdukController@destroy';
+$routes['control-panel/kategori-produk/update/:id'] = 'KategoriProdukController@update';
 
 //produk
 $routes['control-panel/produk'] = 'ProdukController@index';
 $routes['control-panel/produk/create'] = 'ProdukController@create';
 $routes['control-panel/produk/add'] = 'ProdukController@add';
-
+$routes['control-panel/produk/edit/:id'] = 'ProdukController@edit';
+$routes['control-panel/produk/update/:id'] = 'ProdukController@update';
 
 //pengguna
 $routes['control-panel/pengguna'] = 'PenggunaController@index';
