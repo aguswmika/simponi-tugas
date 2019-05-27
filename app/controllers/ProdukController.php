@@ -6,6 +6,7 @@
             checkIfNotAdmin();
 
 			$this->produk = model('produk');
+
         	$this->satuan = model('satuan');
         	$this->kategoriProduk= model('kategoriproduk');
 		}
@@ -52,6 +53,7 @@
 
        		return view('admin/produk/add', $data);
     	}
+
     	public function create(){
 	         $config = [
 	            'nama' => [
@@ -66,7 +68,14 @@
 	            ],
 	            'stok' => [
 	            	'integer'  => true,
-	                'required' => true
+	            	'required' => true
+	            ],
+	            
+	            'satuan' => [
+	            	'required' => true
+	            ],
+	            'kategoriproduk' => [
+	            	'required' => true
 	            ]
 	        ];
 
