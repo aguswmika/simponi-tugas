@@ -29,14 +29,14 @@ Class KategoriPembelajaran{
 
     public function getKategori(){
         try {
-<<<<<<< HEAD
+
             $sql = "SELECT 
                     * 
                     FROM 
                     kategori_pembelajaran";
-=======
+
             $sql = "SELECT * FROM kategori_pembelajaran";
->>>>>>> 55cb348b70e460d0dc06be8f35c1f09ebe301f2d
+
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 
