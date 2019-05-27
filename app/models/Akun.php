@@ -107,4 +107,48 @@ class Akun{
             redirect('control-panel/pengguna');
         }
     }
+
+    function register(){
+        try{
+            DB::connection()->beginTransaction();
+            $nama_depan = Input::post('nama_depan');
+            $nama_belakang = Input::post('nama_belakang');
+            $jenis_kelamin = Input::post('jenis_kelamin');
+            $tgl_lahir = Input::post('tgl_lahir');
+            $email = Input::post('email');
+            $username = Input::post('username');
+            $password = md5(Input::post('password'));
+            $file = Input::file('foto')->upload('public/uploads');
+
+            if($file === false){
+                msg('Gambar tidak bisa masuk', 'warning');
+                return;
+            }
+
+
+            $sql = "INSERT INTO akun(email, username, password, hak_akses) VALUES(?, ?, ?, 3)";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$email, $username, $password]);
+
+            $id_user = DB::connection()->lastInsertId();
+
+            $sql = "INSERT INTO petani(nama_depan, nama_belakang, jenis_kelamin, tgl_lahir, foto, id_user) VALUES(?, ?, ?, ?, ?, ?)";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$nama_depan, $nama_belakang, $jenis_kelamin, $tgl_lahir, str_replace('public/', '', $file), $id_user]);
+
+            if($prep->rowCount()){
+                msg('Data berhasil dimasukkan', 'info');
+            }else{
+                msg('Data gagal dimasukkan', 'danger');
+            }
+
+            DB::connection()->commit();
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(), 'danger');
+            redirect('register');
+        }
+    }
 }

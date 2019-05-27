@@ -76,6 +76,40 @@ class LandingController
 		return view('landing/login', $data);
 	}
 
+	function doRegister(){
+		$config = [
+			'nama_depan' => [
+				'required' => true
+			],
+			'nama_belakang' => [
+				'required' => true
+			],
+			'jenis_kelamin' => [
+				'required' => true
+			],
+			'tgl_lahir' => [
+				'required' => true
+			],
+			'username' => [
+				'required' => true
+			],
+			'password' => [
+				'required' => true
+			]
+		];
+
+		$valid = new Validation($config);
+
+		if($valid->run()){
+            $this->akun->register();
+
+            redirect('register');
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('register');
+        }
+	}
+
 	function doLogin(){
 		checkIfLogin();
 		

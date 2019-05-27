@@ -28,6 +28,7 @@ $routes['product-detail'] = 'LandingController@product_detail';
 $routes['shopping-cart'] = 'LandingController@cart';
 $routes['forum'] = 'LandingController@forum';
 $routes['login'] = 'LandingController@login';
+$routes['doregister'] = 'LandingController@register';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';

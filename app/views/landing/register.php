@@ -10,27 +10,27 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Register untuk mendapatkan akun</p>
 
-			<form action="<?php echo base_url('dologin') ?>" method="post">
+			<form action="<?php echo base_url('doregister') ?>" method="post">
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Nama Depan" name="nama_depan">
 					<span class="form-control-feedback"><i class="fa fa-user"></i></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="text" class="form-control" placeholder="Nama Belakang" name="nama_depan">
+					<input type="text" class="form-control" placeholder="Nama Belakang" name="nama_belakang">
 					<span class="form-control-feedback"><i class="fa fa-user"></i></span>
 				</div>
 				<div class="form-group has-feedback">
 					<label class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="gender" value="option1">
+						<input class="form-check-input" type="radio" name="gender" value="l">
 						<span class="form-check-label"> Laki-laki </span>
 					</label>
 					<label class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="gender" value="option2">
+						<input class="form-check-input" type="radio" name="gender" value="p">
 						<span class="form-check-label"> Perempuan </span>
 					</label>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="date" class="form-control" placeholder="Nama Belakang" name="nama_depan">
+					<input type="date" class="form-control" placeholder="Kalender" name="tgl_lahir">
 					<span class="form-control-feedback"><i class="fa fa-calendar"></i></span>
 				</div>
 				<div class="form-group has-feedback">
@@ -46,15 +46,13 @@
 					<span class="form-control-feedback"><i class="fa fa-lock"></i></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="Repeat Password" name="password">
+					<input type="password" class="form-control" placeholder="Repeat Password" name="repassword">
 					<span class="form-control-feedback"><i class="fa fa-lock"></i></span>
 				</div>
 				<div class="row">
 					<div class="col-xs-8">
-						<div class="checkbox icheck">
-							<label>
-								<input type="checkbox"> Setuju
-							</label>
+						<div class="upload-btn-wrapper">
+							<input type="file" id="inputFoto" name="foto" accept=".png, .jpg, .jpeg" />
 						</div>
 					</div>
 					<div class="col-xs-4">
