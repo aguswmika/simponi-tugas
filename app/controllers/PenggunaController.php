@@ -7,6 +7,7 @@ class PenggunaController
     function __construct()
     {
         checkIfNotLogin();
+        checkIfNotAdmin();
         $this->akun = model('akun');
     }
 

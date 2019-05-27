@@ -130,7 +130,6 @@ class LandingController
 
 		if($valid->run()){
 			if($this->akun->login($user, $pass)){
-				Session::sess('login', true);
 				redirect('control-panel');
 			}else{
 				msg('Username atau password Anda salah!', 'danger');

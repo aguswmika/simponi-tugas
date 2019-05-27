@@ -2,7 +2,8 @@
 	class KategoriProdukController{
 		private $kategori_produk;
 		function __construct(){
-			checkIfNotLogin();
+            checkIfNotLogin();
+            checkIfNotAdmin();
 			$this->kategori_produk = model('kategoriproduk');
 		}
 

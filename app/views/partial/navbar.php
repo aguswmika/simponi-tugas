@@ -26,7 +26,11 @@
 					<a class="nav-link" href="<?php echo base_url('contact-us') ?>">kontak kami</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url('login') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Login</a>
+					<?php if(Session::sess('login')){ ?>
+                        <a class="nav-link" href="<?php echo base_url('login') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Login</a>
+                    <?php }else{ ?>
+                        <a class="nav-link" href="<?php echo base_url('logout') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Logout</a>
+                    <?php } ?>
 				</li>
 			</ul>
 		</div>
