@@ -1,12 +1,50 @@
-<?php 
+<?php
+
 class Akun{
-	function login($user, $pass){
+    private static $userData = null;
+
+    static function getLogin(){
+        if(!isset(self::$userData)){
+            $akun = new Akun();
+            self::$userData = $akun->getByField('token', Session::sess('token'));
+        }
+
+        return self::$userData;
+    }
+
+    function login($user, $pass){
 		try {
+		    DB::connection()->beginTransaction();
 			$sql = "SELECT * FROM akun WHERE username = ? AND password = ?";
 			$prep = DB::connection()->prepare($sql);
 			$prep->execute([$user, $pass]);
-			return $prep->rowCount();
+
+            $count = $prep->rowCount();
+
+            if($count === 0){
+                return false;
+            }
+
+			$data = $prep->fetch(PDO::FETCH_OBJ);
+            $token = null;
+
+			if(empty($data->token)){
+                $token = substr(bin2hex(openssl_random_pseudo_bytes(16)), 0, 100);
+
+                $sql = "UPDATE akun SET token = ? WHERE username = ?";
+                $prep1 = DB::connection()->prepare($sql);
+                $prep1->execute([$token, $data->username]);
+            }else{
+			    $token = $data->token;
+            }
+
+            Session::sess('token', $token);
+            Session::sess('loggedIn', true);
+
+            DB::connection()->commit();
+			return $count;
 		} catch (PDOException $e) {
+            DB::connection()->rollBack();
 			msg('Kesalahan : '.$e->getMessage(), 'danger');
 			redirect('login');
 		}

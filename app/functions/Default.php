@@ -9,13 +9,14 @@ if(!function_exists('load')){
 if(!function_exists('model')){
 	function model($str){
 		$model = ucfirst($str);
-		require BASE_PATH.'app/models/'.$model.'.php';
+		require_once BASE_PATH.'app/models/'.$model.'.php';
 		return new $model();
 	}
 }
 
 if(!function_exists('view')){
 	function view($str, $data = []){
+	    model('akun');
 		extract($data);
 		return require BASE_PATH.'app/views/'.$str.'.php';
 	}
@@ -103,7 +104,7 @@ if(!function_exists('paginate')){
 
 if(!function_exists('checkIfNotLogin')){
 	function checkIfNotLogin(){
-		if(Session::sess('login') === false || Session::sess('login') === null){
+		if(Session::sess('loggedIn') === false || Session::sess('loggedIn') === null){
 			msg('Anda harus login terlebih dahulu', 'warning');
 			redirect('login');
 		}
@@ -112,7 +113,7 @@ if(!function_exists('checkIfNotLogin')){
 
 if(!function_exists('checkIfLogin')){
 	function checkIfLogin(){
-		if(Session::sess('login') === true){
+		if(Session::sess('loggedIn') === true){
 			redirect('control-panel');
 		}
 	}
@@ -143,3 +144,13 @@ if(!function_exists('url_slug')){
         return substr($text,0,100);
     }
 }
+
+if(!function_exists('checkIfNotAdmin')){
+    function checkIfNotAdmin() {
+        model('akun');
+        if(Akun::getLogin()->hak_akses == 3) {
+            redirect('');
+        }
+    }
+}
+

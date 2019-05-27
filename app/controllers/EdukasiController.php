@@ -8,6 +8,7 @@ class EdukasiController
     function __construct()
     {
         checkIfNotLogin();
+        checkIfNotAdmin();
         $this->kategori = model('kategoripembelajaran');
         $this->edukasi = model('edukasi');
     }
@@ -105,10 +106,11 @@ class EdukasiController
             abort(404);
         }
 
-        $data = [
+        $data =
             'title' => 'Edit '.$edukasi->judul,
             'item'  => $edukasi,
             'kategori'  => $this->kategori->getKategori()
+
         ];
 
         return view('admin/edukasi/edit', $data);

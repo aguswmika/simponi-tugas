@@ -6,9 +6,9 @@ class DashboardController
 
 	function __construct()
 	{
+        checkIfNotLogin();
+        checkIfNotAdmin();
 		$this->akun = model('akun');
-
-		checkIfNotLogin();
 	}
 
 	public function index(){

@@ -1,13 +1,14 @@
 <?php
 	class ProdukController{
-		private $produk,$satuan,$kategoriProduk;
+		private $produk, $satuan, $kategoriProduk;
 		function __construct(){
-			checkIfNotLogin();
+            checkIfNotLogin();
+            checkIfNotAdmin();
+
 			$this->produk = model('produk');
 
         	$this->satuan = model('satuan');
         	$this->kategoriProduk= model('kategoriproduk');
-
 		}
 		public function index(){
 			$tabel = new Table([
@@ -52,6 +53,7 @@
 
        		return view('admin/produk/add', $data);
     	}
+
     	public function create(){
 	         $config = [
 	            'nama' => [

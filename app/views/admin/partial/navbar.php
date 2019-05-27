@@ -33,14 +33,13 @@
 			  	<li class="dropdown user user-menu">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				  		<i class="fa fa-user"></i>
-				  		<span class="hidden-xs">Agus Wahyu</span>
+				  		<span class="hidden-xs"><?php echo Akun::getLogin()->username ?></span>
 					</a>
 					<ul class="dropdown-menu">
 				  		<li class="user-header">
-							<img src="<?php echo base_url('dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
+							<img src="<?php echo base_url('dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="<?php echo Akun::getLogin()->username ?> Image">
 							<p>
-								Agus Wahyu
-								<small>Admin</small>
+								<small><?php echo Akun::getLogin()->hak_akses == 1 ? 'Admin' : 'Staff Gudang' ?></small>
 							</p>
 				  		</li>
 				  		<li class="user-footer">

@@ -2,7 +2,8 @@
 class KategoriEdukasiController{
 	private $KategoriPembelajaran;
 	function __construct(){
-		checkIfNotLogin();
+        checkIfNotLogin();
+        checkIfNotAdmin();
 		$this->KategoriPembelajaran = model('KategoriPembelajaran');
 	}
 
