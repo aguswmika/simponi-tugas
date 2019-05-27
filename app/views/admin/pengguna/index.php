@@ -14,6 +14,7 @@
                 <h1 class="box-title">List</h1>
             </div>
             <div class="box-body">
+                <?php echo Session::flash('error'); ?>
                 <a href="<?php echo base_url('control-panel/pengguna/add') ?>" class="btn btn-info" style="margin-bottom: 25px;">Tambah</a>
                 <?php echo $tabel ?>
             </div>

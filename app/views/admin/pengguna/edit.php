@@ -25,7 +25,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url('control-panel/pengguna') ?>"><i class="fa fa-users"></i> Pengguna</a></li>
-            <li class="active">Tambah</li>
+            <li class="active">Edit</li>
         </ol>
     </section>
 
@@ -34,48 +34,47 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header">
-                        <h1 class="box-title">Tambah</h1>
+                        <h1 class="box-title">Edit</h1>
                     </div>
                     <div class="box-body">
                         <?php echo Session::flash('error'); ?>
-                        <form action="<?php echo base_url('control-panel/pengguna/create') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('control-panel/pengguna/update/'.Input::url(3)) ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                v
                                 <label>Nama Depan</label>
-                                <input type="text" name="nama_depan" class="form-control" value="<?php echo old('nama_depan') ?> 
-                                ">
+                                <input type="text" name="nama_depan" class="form-control" value="<?php echo (old('nama_depan') === null ? $item->nama_depan : old('nama_depan')) ?>">
                             </div>
                             <div class="form-group">
                                 <label>Nama Belakang</label>
-                                <input type="text" name="nama_belakang" class="form-control" value="<?php echo old('nama_belakang') ?>">
+                                <input type="text" name="nama_belakang" class="form-control" value="<?php echo (old('nama_belakang') === null ? $item->nama_belakang : old('nama_belakang')) ?>">
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <select name="jenis_kelamin" class="form-control">
                                     <option value="">-- Pilih --</option>
-                                    <?php $jk = old('jenis_kelamin') ?>
+                                    <?php $jk = (old('jenis_kelamin') === null ? $item->jenis_kelamin : old('jenis_kelamin')) ?>
                                     <option value="l" <?php echo ($jk === 'l' ? 'selected' : '' ) ?>>Laki-laki</option>
                                     <option value="p" <?php echo ($jk === 'p' ? 'selected' : '' ) ?>>Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Lahir</label>
-                                <input type="date" name="tgl_lahir" class="form-control" value="<?php echo old('tgl_lahir') ?>">
+                                <input type="date" name="tgl_lahir" class="form-control" value="<?php echo (old('tgl_lahir') === null ? $item->tgl_lahir : old('tgl_lahir')) ?>">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control" value="<?php echo old('email') ?>">
+                                <input type="email" name="email" class="form-control" value="<?php echo (old('email') === null ? $item->email : old('email')) ?>">
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="username" class="form-control" value="<?php echo old('username') ?>">
+                                <input type="text" name="username" class="form-control" value="<?php echo (old('username') === null ? $item->username : old('username')) ?>">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control" value="<?php echo old('password') ?>">
+                                <input type="password" name="password" class="form-control" value="">
                             </div>
                             <div class="form-group">
                                 <label>Foto</label><br>
+                                <?php echo (!empty($item->foto) ? '<img style="max-width: 250px;" src="'.base_url($item->foto).'" alt=""><br>' : '') ?>
                                 <div class="text-foto">
                                     <b>Nama File:</b> <span id="namaFoto"></span>
                                 </div>

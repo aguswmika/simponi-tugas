@@ -53,6 +53,7 @@ $routes['control-panel/kategori-produk/create'] = 'KategoriProdukController@crea
 $routes['control-panel/kategori-produk/add'] = 'KategoriProdukController@add';
 $routes['control-panel/kategori-produk/edit/:id'] = 'KategoriProdukController@edit';
 $routes['control-panel/kategori-produk/destroy'] = 'KategoriProdukController@destroy';
+
 //produk
 $routes['control-panel/produk'] = 'ProdukController@index';
 $routes['control-panel/produk/create'] = 'ProdukController@create';
@@ -64,6 +65,7 @@ $routes['control-panel/pengguna'] = 'PenggunaController@index';
 $routes['control-panel/pengguna/add'] = 'PenggunaController@add';
 $routes['control-panel/pengguna/create'] = 'PenggunaController@create';
 $routes['control-panel/pengguna/edit/:id'] = 'PenggunaController@edit';
+$routes['control-panel/pengguna/update/:id'] = 'PenggunaController@update';
 $routes['control-panel/pengguna/destroy'] = 'PenggunaController@destroy';
 
 // autentikasi

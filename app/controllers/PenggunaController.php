@@ -13,8 +13,8 @@ class PenggunaController
     public function index(){
         $tabel = new Table([
             'query' => [
-                'sql' => 'SELECT * FROM akun'
-            ],
+                'sql' => 'SELECT * FROM akun WHERE hak_akses > 1'
+            ]
         ]);
         $tabel->addRow('No', function ($data, $index){
                 return $index+1;
@@ -101,23 +101,57 @@ class PenggunaController
     }
 
     function edit($id){
-        $akun = $this->akun->getById($id);
+        $akun = $this->akun->getByUsername($id);
 
-        if($akun === false){
+        if($akun === false || $akun->hak_akses === 1){
             abort(404);
         }
 
         $data = [
-            'title' => 'Edit Pengguna '.$akun->username,
+            'title' => 'Edit Pengguna '.$akun->nama_belakang,
             'item'  => $akun
         ];
 
         return view('admin/pengguna/edit', $data);
     }
 
+    function update($id){
+        $config = [
+            'nama_depan' => [
+                'required' => true
+            ],
+            'nama_belakang' => [
+                'required' => true
+            ],
+            'jenis_kelamin' => [
+                'required' => true
+            ],
+            'tgl_lahir' => [
+                'required' => true
+            ],
+            'email' => [
+                'required' => true
+            ],
+            'username' => [
+                'required' => true
+            ]
+        ];
+
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->akun->edit($id);
+
+            redirect('control-panel/pengguna/');
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/pengguna/');
+        }
+    }
+
     function destroy(){
         $config = [
-            'slug' => [
+            'id' => [
                 'required' => true
             ]
         ];

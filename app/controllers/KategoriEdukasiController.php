@@ -17,7 +17,9 @@ class KategoriEdukasiController{
 			return $index+1;
 		})
 		->addRow('Nama','nama')
-		->addRow('Deskripsi','deskripsi')
+		->addRow('Deskripsi',function ($data){
+            return (strlen($data['deskripsi']) > 80 ? substr($data['deskripsi'], 0, 80).'...' : $data['deskripsi']);
+        })
 		->addRow('Aksi',function($data){
 			return '
 				<a href="'.base_url('control-panel/kategori-edukasi/edit/'.$data['slug']).'" class="btn btn-warning btn-xs">Edit</a>
