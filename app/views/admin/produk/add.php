@@ -59,6 +59,29 @@
                                 <input type="number" name="stok" class="form-control" value="<?php echo old('stok') === null ? 0 : old('stok') ?>">
                             </div>
                             <div class="form-group">
+                                <label>Satuan</label>
+                                <select name="satuan" class="form-control">
+                                    <?php $check = old('satuan') ?>
+                                    <option value="">-- Pilih --</option>
+                                    <?php foreach ($satuan as $item) {?>
+                                        <option value="<?php echo $item->id ?>" <?php echo ($check == $item->id ? 'selected' : '' ) ?>><?php echo $item->nama ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori Produk</label>
+                                <select name="kategoriproduk" class="form-control">
+                                    <?php $check = old('kategoriproduk')  ?>
+                                    <option value="">-- Pilih --</option>
+                                    <?php if($kategoriproduk !== false) {?>
+                                        <?php foreach ($kategoriproduk as $item) {?>
+                                            <option value="<?php echo $item->id ?>" <?php echo ($check == $item->id ? 'selected' : '' ) ?>><?php echo $item->nama ?></option>
+                                        <?php } ?>
+                                    <?php } ?>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Thumbnail Foto</label><br>
                                 <div class="text-foto">
                                     <b>Nama File:</b> <span id="namaFoto"></span>

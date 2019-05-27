@@ -1,14 +1,24 @@
 <?php
 	class ProdukController{
-		private $produk;
+		private $produk,$satuan,$kategoriProduk;
 		function __construct(){
 			checkIfNotLogin();
 			$this->produk = model('produk');
+<<<<<<< HEAD
+        	$this->satuan = model('satuan');
+        	$this->kategoriProduk= model('kategoriproduk');
+=======
+>>>>>>> 55cb348b70e460d0dc06be8f35c1f09ebe301f2d
 		}
 		public function index(){
 			$tabel = new Table([
 				'query' => [
-					'sql' => 'SELECT * FROM produk'
+					'sql' => '
+						SELECT 
+                          *
+						FROM
+						produk
+					'
 				]
 			]);
 			$tabel->addRow('No',function($data,$index){
@@ -19,7 +29,7 @@
 			->addRow('Harga Beli','harga_beli')
 			->addRow('Stok','stok')
 			->addRow('Aksi',function($data){
-				return '<a href="'.base_url('kategoriProduk/edit/'.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>';
+				return '<a href="'.base_url(''.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>';
 			})
 			->search([
 				'id',
@@ -36,8 +46,9 @@
 	
 		public function add(){
         	$data = [
-            	'title'     => 'Tambah Produk'
-            
+            	'title'     => 'Tambah Produk',
+            	'satuan'  => $this->satuan->getSatuan(),
+            	'kategoriproduk' => $this->kategoriProduk->ambilData()
         	];
 
        		return view('admin/produk/add', $data);
@@ -56,6 +67,19 @@
 	            ],
 	            'stok' => [
 	            	'integer'  => true,
+<<<<<<< HEAD
+	                'required' => true
+	            ],
+	            'thumbnail_foto' => [
+	            	'required' => true
+	            ],
+	            'id_satuan' => [
+	            	'required' => true
+	            ],
+	            'id_kategori_produk' => [
+	            	'required' => true
+=======
+>>>>>>> 55cb348b70e460d0dc06be8f35c1f09ebe301f2d
 	            ]
 	        ];
 

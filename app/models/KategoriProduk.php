@@ -19,7 +19,7 @@ Class KategoriProduk{
         }
     }
 
-    function getById(){
+    function ambilData(){
         try {
             $sql = "SELECT 
                     * 
