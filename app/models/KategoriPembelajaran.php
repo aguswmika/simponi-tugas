@@ -27,23 +27,26 @@ Class KategoriPembelajaran{
         }
     }
 
+    public function getBySlug($slug){
+        try {
+            $sql = "SELECT * FROM kategori_pembelajaran WHERE slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$slug]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
     public function getKategori(){
         try {
-<<<<<<< HEAD
-
-=======
->>>>>>> b6edeb213dfd02db28b0dc6f0bbb29bbbf1c3752
-            $sql = "SELECT 
-                    * 
-                    FROM 
-                    kategori_pembelajaran";
-<<<<<<< HEAD
-
             $sql = "SELECT * FROM kategori_pembelajaran";
-
-=======
-            $sql = "SELECT * FROM kategori_pembelajaran";
->>>>>>> b6edeb213dfd02db28b0dc6f0bbb29bbbf1c3752
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 

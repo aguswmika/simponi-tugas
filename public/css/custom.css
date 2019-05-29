@@ -114,6 +114,7 @@ section{
 .title{
 	text-align: center;
 	position: relative;
+	margin-bottom: 60px;
 }
 
 .title::after{
@@ -230,4 +231,35 @@ section{
 }
 .jrk, h6 {
 	margin-left: 2rem;
+}
+
+.caption-container{
+	color: #282828;
+	text-align: center;
+}
+
+.picture-container{
+	margin-bottom: 10px	;
+}
+
+.content-container{
+	border: 1px solid #8b8b8b;
+	padding: 15px;
+}
+
+#educate{
+	height: 350px;
+	background-image: url("../img/hero2.jpg");
+	background-size: cover;
+	background-attachment: scroll;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.middle{
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
 }

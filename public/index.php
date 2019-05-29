@@ -57,7 +57,7 @@ foreach ($routes as $route_key => $route_values) {
 				$variable_next = explode('/', $variable_next);
 
 				foreach ($used as $key => $value) {
-					array_push($parameter, $variable_next[$key]);
+					@array_push($parameter, $variable_next[$key]);
 				}
 			}
 

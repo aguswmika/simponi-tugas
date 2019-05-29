@@ -60,6 +60,50 @@ class Edukasi{
             return false;
         }
     }
+
+    function getByCategory($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    pembelajaran
+                    WHERE id_kategori_pembelajaran  = ?
+                    ORDER BY urutan ASC";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetchAll(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    function getBySlug($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    pembelajaran
+                    WHERE slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
     function hapus(){
         try{
             DB::connection()->beginTransaction();
