@@ -71,9 +71,10 @@
     		
 	}
 	public function edit($id){
-		$kategori_produk = $this->kategori_produk->getById($id);
+		$kategori_produk = $this->kategori_produk->getByIdKategoriProduk($id);
 
         if($kategori_produk === false){
+
             abort(404);
         }
 
@@ -84,6 +85,24 @@
 
         return view('admin/kategoriProduk/edit', $data);
 	}
+    function update($id){
+        $config = [
+            'nama' => [
+                'required' => true
+            ]
+        ];
+
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->kategori_produk->edit($id);
+
+            redirect('control-panel/kategori-produk/edit/'.$id);
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/kategori-produk/'.$id);
+        }
+    }
 	public function destroy(){
         $config = [
             'id' => [

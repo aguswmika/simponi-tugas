@@ -38,10 +38,10 @@
                     </div>
                     <div class="box-body">
                         <?php echo Session::flash('error'); ?>
-                        <form action="<?php echo base_url('control-panel/kategori-produk/create') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('control-panel/kategori-produk/update/'.Input::url(3)) ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="text" name="nama" class="form-control" value="<?php echo old('nama') ?>">
+                                <input type="text" name="nama" class="form-control" value="<?php echo old('nama') === null ? $item->nama : old('nama') ?>">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Edit</button>

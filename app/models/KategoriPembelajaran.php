@@ -1,5 +1,59 @@
 <?php
 Class KategoriPembelajaran{
+    function getByIdKategoriPembelajaran($id){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    kategori_pembelajaran
+                    WHERE kategori_pembelajaran.slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+    function edit($id){
+        try{
+            DB::connection()->beginTransaction();
+            $nama = Input::post('nama');
+           // $id = Input::url(3);
+            $id = $this->getByIdKategoriPembelajaran($id)->id;
+            $file = Input::file('icon')->upload('public/uploads');
+            $deskripsi = Input::post('deskripsi');
+            
+             if($file === false){
+                $sql = "UPDATE kategori_pembelajaran SET nama = ?, deskripsi = ? WHERE id = ?";
+
+                $prep = DB::connection()->prepare($sql);
+                $prep->execute([$nama,$deskripsi,$id]);
+             }else{
+                $sql = "UPDATE kategori_pembelajaran SET nama = ?, deskripsi = ?, icon = ? WHERE id = ?";
+
+                $prep = DB::connection()->prepare($sql);
+                $prep->execute([$nama,$deskripsi,$file,$id]);
+            }
+            
+            if($prep->rowCount()){
+                msg('Data berhasil diedit', 'info');
+            }else{
+                msg('Data gagal diedit', 'danger');
+            }
+
+            DB::connection()->commit();
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(), 'danger');
+            redirect('control-panel/kategori-edukasi/');
+        }
+    }
 	function tambah(){
 	    try{
             $nama = Input::post('nama');
@@ -29,6 +83,7 @@ Class KategoriPembelajaran{
 
     public function getBySlug($slug){
         try {
+
             $sql = "SELECT * FROM kategori_pembelajaran WHERE slug = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$slug]);
@@ -47,6 +102,7 @@ Class KategoriPembelajaran{
     public function getKategori(){
         try {
             $sql = "SELECT * FROM kategori_pembelajaran";
+
             $prep = DB::connection()->prepare($sql);
             $prep->execute();
 
@@ -60,6 +116,7 @@ Class KategoriPembelajaran{
             return false;
         }
     }
+
     public function hapus(){
         try{
 

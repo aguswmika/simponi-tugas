@@ -1,16 +1,16 @@
-<?php
+    <?php
 
 class EdukasiController
 {
 
-    private $kategori, $akun;
+    private $kategori, $edukasi;
 
     function __construct()
     {
         checkIfNotLogin();
         checkIfNotAdmin();
         $this->kategori = model('kategoripembelajaran');
-        $this->akun = model('edukasi');
+        $this->edukasi = model('edukasi');
     }
 
     public function index(){
@@ -91,7 +91,7 @@ class EdukasiController
         $valid = new Validation($config);
 
         if($valid->run()){
-            $this->akun->tambah();
+            $this->edukasi->tambah();
 
             redirect('control-panel/edukasi/add');
         }else{
@@ -100,22 +100,53 @@ class EdukasiController
         }
     }
     function edit($id){
-        $akun = $this->akun->getById($id);
+        $edukasi = $this->edukasi->getById($id);
 
-        if($akun === false){
+        if($edukasi === false){
             abort(404);
         }
 
         $data = [
-            'title' => 'Edit '.$akun->judul,
-            'item'  => $akun,
+            'title' => 'Edit '.$edukasi->judul,
+            'item'  => $edukasi,
             'kategori'  => $this->kategori->getKategori()
-
         ];
 
         return view('admin/edukasi/edit', $data);
     }
+    function update($id){
+        $config = [
+            'judul' => [
+                'required' => true
+            ],
+            'deskripsi' => [
+                'required' => true
+            ],
+            'konten' => [
+                'required' => true
+            ],
+            'jenis_pembelajaran' => [
+                'required' => true
+            ],
+            'status' => [
+                'required' => true
+            ],
+            'urutan' => [
+                'required' => true
+            ]
+        ];
 
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->edukasi->edit($id);
+
+            redirect('control-panel/edukasi/');
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/edukasi/');
+        }
+    }
      function destroy(){
         $config = [
             'slug' => [
@@ -126,7 +157,7 @@ class EdukasiController
         $valid = new Validation($config);
 
         if($valid->run()){
-            $this->akun->hapus();
+            $this->edukasi->hapus();
 
             redirect('control-panel/edukasi');
         }else{
