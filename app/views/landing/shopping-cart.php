@@ -5,6 +5,7 @@
 <link href="<?php echo base_url('css/ui.css') ?>" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url('css/responsive.css') ?>" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 
+<?php view('landing/marketplace/navbar', $data) ?>
 <section class="section-content bg padding-y border-top">
 		<div class="container">
 
@@ -76,9 +77,12 @@
 						<dd class="text-right"><strong>?</strong></dd>
 					</dl>
 					<hr>
-				</aside> <!-- col.// -->
-			</div>
-		</div> <!-- container .//  -->
+					<div>
+						<button class="btn btn-success"> <i class="fa fa-shopping-cart"></i> Bayar Sekarang</button>
+					</div>
+					</aside> <!-- col.// -->
+				</div>
+		</div> <!-- container .//  -->>
 	</section>
 <script src="<?php echo base_url('plugins/fancybox/fancybox.min.js') ?>" type="text/javascript"></script>
 <script src="<?php echo base_url('plugins/owlcarousel/owl.carousel.min.js') ?>"></script>
