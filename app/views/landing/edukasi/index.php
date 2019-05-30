@@ -5,7 +5,7 @@
         <h1 style="text-align: center;color: #fafafa">Perjalanan Edukasi</h1>
     </div>
 </section>
-<section>
+<!-- <section>
 	<div class="container">
 		<div class="row">
             <?php foreach ($kategori as $item) { ?>
@@ -24,6 +24,26 @@
             <?php } ?>
         </div>
 	</div>
+</section> -->
+<section>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($kategori as $item) { ?>
+            <div class="col-md-4">
+                <a href="<?php echo base_url('edukasi/'.$item->slug) ?>">
+                <div class="content-container bottom-card">
+                    <div class="card-container">
+                        <img class="img-fluid" src="<?php echo base_url($item->icon) ?> " alt="<?php echo $item->nama ?>">
+                    </div>
+                    <div class="caption-container">
+                        <h1 style="font-family: 'Poppins', sans-serif !important;"><?php echo $item->nama ?></h1>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
 </section>
 
 <!--<section>-->
