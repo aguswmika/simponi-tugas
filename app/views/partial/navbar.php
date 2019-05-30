@@ -27,10 +27,15 @@
 				</li>
 				<li class="nav-item">
 					<?php if(Session::sess('loggedIn') == false || Session::sess('loggedIn') == null){ ?>
-                        <a class="nav-link" href="<?php echo base_url('login') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Login</a>
-                    <?php }else{ ?>
-                        <a class="nav-link" href="<?php echo base_url('logout') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Logout</a>
-                    <?php } ?>
+						<a class="nav-link" href="<?php echo base_url('login') ?>"><i class="fa fa-user" style="color: #9fbd12"></i> Login</a>
+					<?php }else{ ?>
+						<div class="nav-item dropdown" style="cursor: pointer;">
+							<span class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color: #9fbd12"></i> <?php echo Akun::getLogin()->username ?></span>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="nav-link dropdown-item" href="<?php echo base_url('logout') ?>"> Logout</a>
+							</div>
+						</div>
+					<?php } ?>
 				</li>
 			</ul>
 		</div>
