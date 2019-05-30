@@ -76,7 +76,10 @@ $routes['control-panel/pengguna/destroy'] = 'PenggunaController@destroy';
 
 //blog
 $routes['control-panel/blog'] = 'BlogController@index';
-
+$routes['control-panel/blog/add'] = 'BlogController@add';
+$routes['control-panel/blog/create'] = 'BlogController@create';
+$routes['control-panel/blog/edit/:id'] = 'BlogController@edit';
+$routes['control-panel/blog/update/:id'] = 'BlogController@update';
 // autentikasi
 $routes['login'] = 'LandingController@login';
 $routes['dologin'] = 'LandingController@doLogin';
