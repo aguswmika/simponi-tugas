@@ -38,7 +38,7 @@ Class KategoriPembelajaran{
                 $sql = "UPDATE kategori_pembelajaran SET nama = ?, deskripsi = ?, icon = ? WHERE id = ?";
 
                 $prep = DB::connection()->prepare($sql);
-                $prep->execute([$nama,$deskripsi,$file,$id]);
+                $prep->execute([$nama,$deskripsi,str_replace('public/', '',$file),$id]);
             }
             
             if($prep->rowCount()){

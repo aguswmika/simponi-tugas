@@ -50,7 +50,7 @@ class LandingEdukasiController
         $data = [
             'title' => $edukasi->judul,
             'single' => $edukasi,
-            'edukasi' => $this->edukasi->getByCategory($edukasi->id_kategori_pembelajaran),
+            'edukasi' => $this->edukasi->getByCatgegory($edukasi->id_kategori_pembelajaran),
             'progres' => $this->edukasi->getProgress(Akun::getLogin()->id, $edukasi->id_kategori_pembelajaran)
         ];
 

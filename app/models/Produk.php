@@ -16,6 +16,24 @@ class Produk{
             return false;
         }
     }
+
+    function getData(){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    produk ORDER BY id DESC";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute();
+            if($prep->rowCount()){
+                return $prep->fetchAll(PDO::FETCH_OBJ);
+            }
+            return false;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
     function tambah(){
         try{
             DB::connection()->beginTransaction();

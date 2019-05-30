@@ -109,10 +109,10 @@
 									<div> <a href="<?php echo base_url('img/2.jpg') ?>" data-fancybox=""><img src="<?php echo base_url('img/2.jpg') ?>"></a></div>
 								</div>
 								<div class="img-small-wrap">
-									<div class="item-gallery"> <img src="<?php echo base_url('img/2.jpg') ?>"></div>
-									<div class="item-gallery"> <img src="<?php echo base_url('img/3.jpg') ?>"></div>
-									<div class="item-gallery"> <img src="<?php echo base_url('img/1.jpg') ?>"></div>
-									<div class="item-gallery"> <img src="<?php echo base_url('img/1.jpg') ?>"></div>
+                                    <div class="item-gallery"> <a href="<?php echo base_url('img/2.jpg') ?>" data-fancybox=""><img src="<?php echo base_url('img/2.jpg') ?>"></a></div>
+                                    <div class="item-gallery"> <a href="<?php echo base_url('img/3.jpg') ?>" data-fancybox=""><img src="<?php echo base_url('img/3.jpg') ?>"></a></div>
+                                    <div class="item-gallery"> <a href="<?php echo base_url('img/1.jpg') ?>" data-fancybox=""><img src="<?php echo base_url('img/1.jpg') ?>"></a></div>
+                                    <div class="item-gallery"> <a href="<?php echo base_url('img/1.jpg') ?>" data-fancybox=""><img src="<?php echo base_url('img/1.jpg') ?>"></a></div>
 								</div> 
 							</article>
 						</aside>
@@ -250,6 +250,6 @@
 	</article>
 </div>
 </section>
+<?php view('partial/footer') ?>
 <script src="<?php echo base_url('plugins/fancybox/fancybox.min.js') ?>" type="text/javascript"></script>
 <script src="<?php echo base_url('plugins/owlcarousel/owl.carousel.min.js') ?>"></script>
-<?php view('partial/footer') ?>
