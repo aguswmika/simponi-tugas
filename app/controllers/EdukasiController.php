@@ -43,7 +43,7 @@ class EdukasiController
                 <a href="'.base_url('control-panel/edukasi/edit/'.$data['slug']).'" class="btn btn-warning btn-xs">Edit</a>
                 <form action="'.base_url('control-panel/edukasi/destroy').'" method="post" style="display: inline">
                     <input type="hidden" name="slug" value="'.$data['slug'].'">
-                    <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini?\')">Hapus</button>
+                    <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini? Karena akan berefek dengan materi edukasi\')">Hapus</button>
                 </form>
             ';
         })
