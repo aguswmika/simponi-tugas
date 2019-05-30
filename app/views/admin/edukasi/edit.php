@@ -85,7 +85,7 @@
                                     <?php $check = old('kategori') === null ? $item->id_kategori_pembelajaran  : old('kategori') ?>
                                     <option value="">-- Pilih --</option>
                                     <?php foreach ($kategori as $k) {?>
-                                        <option value="<?php echo $kategori->id ?>" <?php echo ($check == $k->id ? 'selected' : '' ) ?>><?php echo $k->nama ?></option>
+                                        <option value="<?php echo $k->id ?>" <?php echo ($check == $k->id ? 'selected' : '' ) ?>><?php echo $k->nama ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

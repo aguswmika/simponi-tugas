@@ -3,7 +3,7 @@
 		<li class="header">HEADER</li>
         <?php $url = 'control-panel/' ?>
 		<li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === null) ? 'class="active"' : '' ?>><a href="<?php echo base_url($url);  ?>"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
-		<li class="treeview <?php echo (Input::url(0) === 'control-panel' && (Input::url(1) === 'edukasi' || Input::url(1) === 'pengguna' || Input::url(1) === 'produk')) ? 'active menu-open' : '' ?>">
+		<li class="treeview <?php echo (Input::url(0) === 'control-panel' && (Input::url(1) === 'edukasi' || Input::url(1) === 'pengguna' || Input::url(1) === 'produk' || Input::url(1) === 'blog')) ? 'active menu-open' : '' ?>">
 			<a href="#">
 				<i class="fa fa-database"></i>
 				<span>Master</span>

@@ -120,9 +120,6 @@ class EdukasiController
             'judul' => [
                 'required' => true
             ],
-            'deskripsi' => [
-                'required' => true
-            ],
             'konten' => [
                 'required' => true
             ],

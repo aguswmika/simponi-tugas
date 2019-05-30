@@ -25,8 +25,12 @@
 				return $index+1;
 			})
 			->addRow('Nama','nama')
-			->addRow('Harga Jual','harga_jual')
-			->addRow('Harga Beli','harga_beli')
+			->addRow('Harga Jual', function ($data){
+			    return 'Rp '.number_format($data['harga_jual'], 0, ',', '.');
+            })
+			->addRow('Harga Beli',function ($data){
+                return 'Rp '.number_format($data['harga_beli'], 0, ',', '.');
+            })
 			->addRow('Deskripsi', function ($data){
             	return (strlen($data['deskripsi']) > 80 ? substr($data['deskripsi'], 0, 80).'...' : $data['deskripsi']);
         	})

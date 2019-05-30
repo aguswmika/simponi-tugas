@@ -9,10 +9,12 @@ class Edukasi{
             $tipe_pembelajaran = Input::post('jenis_pembelajaran');
             if($tipe_pembelajaran ===  'text'){
                 $konten = Input::post('konten');
+                $deskripsi = null;
             }else if($tipe_pembelajaran === 'video'){
                 $konten = Input::post('video');
             }else{
                 $konten = '';
+
             }
 
             $urutan = Input::post('urutan');
@@ -151,10 +153,12 @@ class Edukasi{
             $id = $this->getById($id)->id;
             if($tipe_pembelajaran ===  'text'){
                 $konten = Input::post('konten');
+                $deskripsi = null;
             }else if($tipe_pembelajaran === 'video'){
                 $konten = Input::post('video');
             }else{
                 $konten = '';
+
             }   
 
             $sql = "UPDATE pembelajaran SET judul = ?, deskripsi = ?, konten = ?,tipe_pembelajaran=?,status=?,urutan = ?, id_kategori_pembelajaran = ? WHERE id = ?";
