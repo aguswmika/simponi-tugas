@@ -48,10 +48,6 @@
                                 <input type="number" name="urutan" class="form-control" value="<?php echo old('urutan') === null ? 1 : old('urutan') ?>">
                             </div>
                             <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea name="deskripsi" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('deskripsi') ?></textarea>
-                            </div>
-                            <div class="form-group">
                                 <label>Jenis Pembelajaran</label>
                                 <?php $check = (old('id_kategori_pembelajaran') === null ? 'text' :  old('id_kategori_pembelajaran'))?>
                                 <div>
@@ -66,13 +62,21 @@
                                 </div>
 
                             </div>
-                            <div class="form-group" id="text" <?php echo ($check === 'video ' ? 'style="display: none"' : '' ) ?>>
-                                <label>Konten Text</label>
-                                <textarea name="konten" id="editor" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('konten') ?></textarea>
+                            <div id="text" <?php echo ($check === 'video ' ? 'style="display: none"' : '' ) ?>>
+                                <div class="form-group">
+                                    <label>Konten Text</label>
+                                    <textarea name="konten" id="editor" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('konten') ?></textarea>
+                                </div>
                             </div>
-                            <div class="form-group" id="video" <?php echo ($check === 'text' ? 'style="display: none"' : '' ) ?>>
-                                <label>Konten Video</label>
-                                <input type="text" name="video" class="form-control" value="<?php echo old('video') ?>" placeholder="https://youtube.com/xHasjkn2">
+                            <div id="video" <?php echo ($check === 'text' ? 'style="display: none"' : '' ) ?>>
+                                <div class="form-group">
+                                    <label>Konten Video</label>
+                                    <input type="text" name="video" class="form-control" value="<?php echo old('video') ?>" placeholder="https://youtube.com/xHasjkn2">
+                                </div>
+                                <div class="form-group">
+                                    <label>Deskripsi</label>
+                                    <textarea name="deskripsi" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('deskripsi') ?></textarea>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Kategori Pembelajaran</label>

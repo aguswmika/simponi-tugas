@@ -35,6 +35,7 @@ class EdukasiController
         })
         ->addRow('Tipe', 'tipe_pembelajaran')
         ->addRow('Kategori', 'kategori')
+        ->addRow('Urutan', 'urutan')
         ->addRow('Status', function($data){
             return '<label class="badge badge-dark">'.ucfirst($data['status']).'</label>';
         })
