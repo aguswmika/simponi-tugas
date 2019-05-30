@@ -76,6 +76,9 @@
 <section>
 	<div class="container">
 		<div class="row">
+            <?php if($produk === false) {?>
+                <h3>Belum ada produk</h3>
+            <?php }else{ ?>
             <?php foreach($produk as $item){ ?>
                 <div class="col-md-4">
                     <figure class="card card-product">
@@ -104,7 +107,8 @@
                         </div>
                     </figure>
                 </div>
-            <?php } ?>
+            <?php }} ?>
+
         </div>
 	</div>
 </section>
