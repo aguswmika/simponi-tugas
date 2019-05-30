@@ -75,7 +75,7 @@ class Akun{
     function getByField($field, $id){
         try {
             $sql = "SELECT 
-                    * 
+                    *, akun.id 
                     FROM 
                     akun
                     LEFT JOIN petani ON petani.id_user = akun.id

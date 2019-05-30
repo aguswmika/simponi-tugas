@@ -166,4 +166,49 @@ class Edukasi{
             redirect('control-panel/pengguna/');
         }
     }
+
+    function getProgress($id_petani, $id_kategori_pembelajaran){
+        try {
+            $sql = "SELECT 
+                    *
+                    FROM 
+                    lihat_pembelajaran
+                    WHERE id_petani = ? AND id_pembelajaran IN (SELECT id FROM pembelajaran WHERE id_kategori_pembelajaran = ?)";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id_petani, $id_kategori_pembelajaran]);
+
+
+            return $prep->fetchAll(PDO::FETCH_OBJ);
+
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    function checkProgress($id_petani, $id_pembelajaran){
+        try{
+            DB::connection()->beginTransaction();
+
+            $sql = "SELECT * FROM lihat_pembelajaran WHERE id_pembelajaran = ? AND id_petani = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id_pembelajaran, $id_petani]);
+
+
+            if($prep->rowCount() === 0){
+                $sql = "INSERT INTO lihat_pembelajaran(id_pembelajaran, id_petani) VALUES(?, ?)";
+
+                $prep = DB::connection()->prepare($sql);
+                $prep->execute([$id_pembelajaran, $id_petani]);
+            }
+
+            DB::connection()->commit();
+
+            return true;
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            return false;
+        }
+    }
 }
