@@ -29,8 +29,6 @@ $routes['marketplace'] = 'LandingController@marketplace';
 $routes['product-detail'] = 'LandingController@product_detail';
 $routes['shopping-cart'] = 'LandingController@cart';
 $routes['forum'] = 'LandingController@forum';
-$routes['login'] = 'LandingController@login';
-$routes['doregister'] = 'LandingController@register';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';
@@ -82,9 +80,12 @@ $routes['control-panel/blog/create'] = 'BlogController@create';
 $routes['control-panel/blog/edit/:id'] = 'BlogController@edit';
 $routes['control-panel/blog/update/:id'] = 'BlogController@update';
 $routes['control-panel/blog/destroy'] = 'BlogController@destroy';
+
 // autentikasi
 $routes['login'] = 'LandingController@login';
 $routes['dologin'] = 'LandingController@doLogin';
 $routes['register'] = 'LandingController@register';
+$routes['doregister'] = 'LandingController@doRegister';
+
 $routes['logout'] = 'DashboardController@logout';
 

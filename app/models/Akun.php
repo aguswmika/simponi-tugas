@@ -260,9 +260,9 @@ class Akun{
             $prep->execute([$nama_depan, $nama_belakang, $jenis_kelamin, $tgl_lahir, str_replace('public/', '', $file), $id_user]);
 
             if($prep->rowCount()){
-                msg('Data berhasil dimasukkan', 'info');
+                msg('Selamat Anda sudah terdaftar, silahkan Login', 'info');
             }else{
-                msg('Data gagal dimasukkan', 'danger');
+                msg('Ups... tidak dapat terdaftar', 'danger');
             }
 
             DB::connection()->commit();

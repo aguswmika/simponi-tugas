@@ -33,6 +33,7 @@
 							<span class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color: #9fbd12"></i> <?php echo Akun::getLogin()->username ?></span>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class="nav-link dropdown-item" href="<?php echo base_url('logout') ?>"> Logout</a>
+								<a class="nav-link dropdown-item" href="<?php echo base_url('profile') ?>"> Profile</a>
 							</div>
 						</div>
 					<?php } ?>
