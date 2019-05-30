@@ -105,6 +105,8 @@ class Produk{
         try{
             DB::connection()->beginTransaction();
             $nama           = Input::post('nama');
+            $konten         = Input::post('konten');
+            $deskripsi      = Input::post('deskripsi');
             $harga_jual     = Input::post('harga_jual');
             $harga_beli     = Input::post('harga_beli');
             $stok           = Input::post('stok');
@@ -129,10 +131,10 @@ class Produk{
             $gallery_foto = json_encode($gallery_foto);
 
 
-            $sql = "UPDATE produk SET nama = ?, harga_jual = ?, harga_beli = ?,stok=?,thumbnail_foto=?, gallery_foto = ?, id_satuan = ?, id_kategori_produk = ? WHERE id = ?";
+            $sql = "UPDATE produk SET nama = ?,deskripsi = ? , konten = ?,  harga_jual = ?, harga_beli = ?,thumbnail_foto=?, gallery_foto = ?,stok=?,id_satuan = ?, id_kategori_produk = ? WHERE id = ?";
             $prep = DB::connection()->prepare($sql);
 
-            $prep->execute([$nama, $harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk,$id]);
+            $prep->execute([$nama,$deskripsi ,$konten ,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk,$id]);
 
             if($prep->rowCount()){
                 msg('Data berhasil diedit', 'info');
