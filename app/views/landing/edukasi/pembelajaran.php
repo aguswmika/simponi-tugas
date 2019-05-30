@@ -26,7 +26,7 @@
                 <?php if($edukasi !== false){ ?>
                     <h5 style="margin-top: 40px;">Progress belajar</h5>
                     <div class="progress mb-4" style="height: 30px">
-                        <?php $jml_progress = (count($progres)/count($edukasi)) * 100 ?>
+                        <?php $jml_progress = ceil((count($progres)/count($edukasi)) * 100) ?>
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?php echo $jml_progress ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $jml_progress ?>%"><?php echo $jml_progress ?>%</div>
                     </div>
                 <?php } ?>

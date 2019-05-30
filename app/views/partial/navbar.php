@@ -13,9 +13,6 @@
 				<li class="nav-item <?php echo (Input::url(0) === 'edukasi' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('edukasi') ?>">edukasi</a>
 				</li>
-				<li class="nav-item <?php echo (Input::url(0) === 'why-simponi' ? 'active' : '') ?>">
-					<a class="nav-link" href="<?php echo base_url('why-simponi') ?>">kenapa simponi?</a>
-				</li>
 				<li class="nav-item <?php echo (Input::url(0) === 'marketplace' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('marketplace') ?>">marketplace</a>
 				</li>
