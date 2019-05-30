@@ -80,7 +80,7 @@ class EdukasiController
                 'required' => true,
                 'integer'  => true
             ],
-            'tipe_pembelajaran' => [
+            'kategori' => [
                 'required' => true
             ],
             'kategori' => [
@@ -106,11 +106,10 @@ class EdukasiController
             abort(404);
         }
 
-        $data =
+        $data = [
             'title' => 'Edit '.$edukasi->judul,
             'item'  => $edukasi,
             'kategori'  => $this->kategori->getKategori()
-
         ];
 
         return view('admin/edukasi/edit', $data);

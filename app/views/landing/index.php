@@ -179,7 +179,7 @@
 				<img src="<?php echo base_url('img/member1.png') ?>" class="card-img-top" alt="...">
 				<div class="card-body text-center">
 					<h5 class="card-title mb-0">Giri Kusuma</h5>
-					<div class="card-text text-black-50">Front End</div>
+					<div class="card-text text-black-50">Menteri Perhubungan</div>
 				</div>
 			</div>
 		</div>
@@ -189,7 +189,7 @@
 				<img src="<?php echo base_url('img/member2.png') ?>" class="card-img-top" alt="...">
 				<div class="card-body text-center">
 					<h5 class="card-title mb-0">Agus Wahyu</h5>
-					<div class="card-text text-black-50">Analist</div>
+					<div class="card-text text-black-50">Menteri Pariwisata</div>
 				</div>
 			</div>
 		</div>
@@ -199,7 +199,7 @@
 				<img src="<?php echo base_url('img/member3.png') ?>" class="card-img-top" alt="...">
 				<div class="card-body text-center">
 					<h5 class="card-title mb-0">Dharma Putra</h5>
-					<div class="card-text text-black-50">Back End</div>
+					<div class="card-text text-black-50">Menteri Pertahanan</div>
 				</div>
 			</div>
 		</div>
@@ -209,7 +209,7 @@
 				<img src="<?php echo base_url('img/member4.png') ?>" class="card-img-top" alt="...">
 				<div class="card-body text-center">
 					<h5 class="card-title mb-0">Bayu Wira</h5>
-					<div class="card-text text-black-50">Beli gorengan</div>
+					<div class="card-text text-black-50">Menteri Dalam Negeri</div>
 				</div>
 			</div>
 		</div>

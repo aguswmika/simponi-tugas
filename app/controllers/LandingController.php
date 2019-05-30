@@ -1,16 +1,16 @@
 <?php
 class LandingController
 {
-	private $akun, $berita;
+	private $akun, $kategoriPembelajaran;
 
 	function __construct()
 	{
 		$this->akun = model('akun');
-		$this->berita = model('kategoripembelajaran');
+		$this->kategoriPembelajaran = model('kategoripembelajaran');
 	}
 	function index(){
 		$data = [
-			'berita' => $this->berita->getKategori()
+
 		];
 		return view('landing/index', $data);
 	}
@@ -33,12 +33,7 @@ class LandingController
     	];
     	return view('landing/blog', $data);
     }
-    function edukasi(){
-    	$data = [
-    		'title' => 'edukasi'	
-    	];
-    	return view('landing/edukasi', $data);
-    }
+
     function marketplace(){
     	$data = [
     		'title' => 'marketplace'

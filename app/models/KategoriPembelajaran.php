@@ -81,9 +81,26 @@ Class KategoriPembelajaran{
         }
     }
 
-    public function getKategori(){
+    public function getBySlug($slug){
         try {
 
+            $sql = "SELECT * FROM kategori_pembelajaran WHERE slug = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$slug]);
+
+            if($prep->rowCount()){
+                return $prep->fetch(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    public function getKategori(){
+        try {
             $sql = "SELECT * FROM kategori_pembelajaran";
 
             $prep = DB::connection()->prepare($sql);
@@ -99,6 +116,7 @@ Class KategoriPembelajaran{
             return false;
         }
     }
+
     public function hapus(){
         try{
 
