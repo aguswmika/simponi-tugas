@@ -15,7 +15,8 @@
             	<li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === 'edukasi') ? 'class="active"' : '' ?>><a href="<?php echo base_url($url.'edukasi') ?>"><i class="fa fa-book"></i> <span>Edukasi</span></a></li>
 		        <li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === 'produk') ? 'class="active"' : '' ?>><a href="<?php echo base_url($url.'produk') ?>"><i class="fa fa-shopping-cart"></i> <span>Produk</span></a></li>
                 <li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === 'pengguna') ? 'class="active"' : '' ?>><a href="<?php echo base_url($url.'pengguna') ?>"><i class="fa fa-users"></i> <span>Pengguna</span></a></li>
-                <li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === 'supplier') ? 'class="active"' : '' ?>><a href="<?php echo base_url($url.'supplier') ?>"><i class="fa fa-truck"></i> <span>Supplier</span></a></li>
+                <li <?php echo (Input::url(0) === 'control-panel' && Input::url(1) === 'blog') ? 'class="active"' : '' ?>><a href="<?php echo base_url($url.'blog') ?>"><i class="fa  fa-file"></i> <span>Blog</span></a></li>
+                
          	</ul>
 		</li>
         <li class="treeview <?php echo (Input::url(0) === 'control-panel' && (Input::url(1) === 'kategori-edukasi' || Input::url(1) === 'kategori-produk')) ? 'active menu-open' : '' ?>">
