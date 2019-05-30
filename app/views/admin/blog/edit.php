@@ -80,15 +80,6 @@
     $(document).ready(function(){
         editor = CKEDITOR.replace('editor');
         CKFinder.setupCKEditor( editor );
-
-        $('input[name="jenis_pembelajaran"]').change(function () {
-            if($(this).val() === 'video'){
-                $('#text').hide();
-                $('#video').show();
-            }else{
-                $('#video').hide();
-                $('#text').show();
-            }
-        });
+        $('#text').show();
     });
 </script>
