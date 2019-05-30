@@ -46,6 +46,14 @@
                                 <label>Nama</label>
                                 <input type="text" name="nama" class="form-control" value="<?php echo old('nama') ?>">
                             </div>
+                             <div class="form-group">
+                                <label>Deskripsi</label>
+                                <textarea name="deskripsi" cols="20" rows="10" maxlength="255" class="form-control"><?php echo old('deskripsi') ?></textarea>
+                            </div>
+                            <div class="form-group" id="text">
+                                <label>Konten</label>
+                                <textarea name="konten" id="editor" cols="30" rows="10" maxlength="255" class="form-control"><?php echo old('konten') ?></textarea>
+                            </div>
                             <div class="form-group">
                                 <label>Harga Jual</label>
                                 <input type="number" name="harga_jual" class="form-control" value="<?php echo old('harga_jual') === null ? 0 : old('harga_jual') ?>">
@@ -112,8 +120,13 @@
         </div>
     </section>
 <?php view('admin/partial/footer', $data) ?>
+<script src="<?php echo base_url('bower_components/ckeditor/ckeditor.js') ?>"></script>
+<script src="<?php echo base_url('ckfinder/ckfinder.js') ?>"></script>
 <script>
     $(document).ready(function(){
+        editor = CKEDITOR.replace('editor');
+        CKFinder.setupCKEditor( editor );
+        $('#text').show();
         $('#inputFoto').change(function(){
             var foto  = $(this)[0].files[0],
                 label = $('#labelFoto'),
@@ -161,5 +174,8 @@
                 $('.text-foto2').hide();
             }
         });
+
     });
+
 </script>
+

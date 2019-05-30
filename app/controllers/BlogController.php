@@ -36,7 +36,7 @@
 				return '
 					<a href="'.base_url('control-panel/blog/edit/'.$data['slug']).'" class="btn btn-warning btn-xs">Edit</a>
                     <form action="'.base_url('control-panel/blog/destroy').'" method="post" style="display: inline">
-                        <input type="hidden" name="id" value="'.$data['slug'].'">
+                        <input type="hidden" name="slug" value="'.$data['slug'].'">
                         <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini?\')">Hapus</button>
                     </form>
 
@@ -133,5 +133,23 @@
 	            redirect('control-panel/blog/add');
 	        }
    		}
+   		function destroy(){
+        $config = [
+            'slug' => [
+                'required' => true
+            ]
+        ];
+
+        $valid = new Validation($config);
+
+        if($valid->run()){
+            $this->blog->hapus();
+
+            redirect('control-panel/blog');
+        }else{
+            msg($valid->getErrors(), 'danger');
+            redirect('control-panel/blog');
+        }
+    }
  }
 ?>

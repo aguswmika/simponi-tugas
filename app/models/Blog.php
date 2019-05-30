@@ -73,4 +73,28 @@ class Blog{
             redirect('control-panel/blog/');
         }
     }
+    function hapus(){
+        try{
+            DB::connection()->beginTransaction();
+
+           $id = Input::post('slug');
+           
+            $sql = "DELETE FROM blog WHERE slug = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id]);
+
+            if($prep->rowCount()){
+                msg('Data berhasil dihapus', 'info');
+            }else{
+                msg('Data gagal dihapus', 'danger');
+            }
+
+            DB::connection()->commit();
+        }catch (PDOException $e){
+            DB::connection()->rollBack();
+            msg('Kesalahan : '.$e->getMessage(), 'danger');
+            redirect('control-panel/blog');
+        }
+    }
 }

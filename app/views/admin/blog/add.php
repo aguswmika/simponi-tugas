@@ -24,7 +24,7 @@
             Blog
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('control-panel/edukasi') ?>"><i class="fa fa-file"></i> Blog</a></li>
+            <li><a href="<?php echo base_url('control-panel/blog') ?>"><i class="fa fa-file"></i> Blog</a></li>
             <li class="active">Tambah</li>
         </ol>
     </section>
@@ -79,18 +79,6 @@
 	$(document).ready(function(){
 		editor = CKEDITOR.replace('editor');
 		CKFinder.setupCKEditor( editor );
-
-		$('input[name="jenis_pembelajaran"]').change(function () {
-            if($(this).val() === 'video'){
-                $('#text').hide();
-                $('#video').show();
-            }else{
-				$('#video').hide();
-				$('#text').show();
-            }
-		});
-
-
-
+        $('#text').show();
 	});
 </script>

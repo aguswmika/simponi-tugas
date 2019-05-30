@@ -41,6 +41,8 @@ class Produk{
             $harga_jual     = Input::post('harga_jual');
             $harga_beli     = Input::post('harga_beli');
             $stok           = Input::post('stok');
+            $konten         = Input::post('konten');
+            $deskripsi      = Input::post('deskripsi');
             $thumbnail_foto = Input::file('foto')->upload('public/uploads');
             $id_satuan      = Input::post('satuan');
             $id_kategori_produk = Input::post('kategoriproduk');
@@ -62,10 +64,10 @@ class Produk{
             $gallery_foto = json_encode($gallery_foto);
 
 
-            $sql = "INSERT INTO produk(nama, harga_jual, harga_beli, thumbnail_foto, gallery_foto, stok, id_satuan, id_kategori_produk) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO produk(nama,deskripsi,konten, harga_jual, harga_beli, thumbnail_foto, gallery_foto, stok, id_satuan, id_kategori_produk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $prep = DB::connection()->prepare($sql);
 
-            $prep->execute([$nama, $harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk]);
+            $prep->execute([$nama, $deskripsi, $konten,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');

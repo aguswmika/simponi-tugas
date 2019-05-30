@@ -27,6 +27,12 @@
 			->addRow('Nama','nama')
 			->addRow('Harga Jual','harga_jual')
 			->addRow('Harga Beli','harga_beli')
+			->addRow('Deskripsi', function ($data){
+            	return (strlen($data['deskripsi']) > 80 ? substr($data['deskripsi'], 0, 80).'...' : $data['deskripsi']);
+        	})
+			->addRow('Konten', function ($data){
+            	return (strlen($data['konten']) > 80 ? substr($data['konten'], 0, 80).'...' : $data['konten']);
+        	})
 			->addRow('Stok','stok')
 			->addRow('Aksi',function($data){
 				return '

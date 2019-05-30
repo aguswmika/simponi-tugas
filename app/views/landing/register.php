@@ -10,7 +10,7 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Register untuk mendapatkan akun</p>
 
-			<form action="<?php echo base_url('doregister') ?>" method="post">
+			<form action="<?php echo base_url('doregister') ?>" method="post" enctype="multipart/form-data">
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Nama Depan" name="nama_depan">
 					<span class="form-control-feedback"><i class="fa fa-user"></i></span>
@@ -21,11 +21,11 @@
 				</div>
 				<div class="form-group has-feedback">
 					<label class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="gender" value="l">
+						<input class="form-check-input" type="radio" name="jenis_kelamin" value="l">
 						<span class="form-check-label"> Laki-laki </span>
 					</label>
 					<label class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="gender" value="p">
+						<input class="form-check-input" type="radio" name="jenis_kelamin" value="p">
 						<span class="form-check-label"> Perempuan </span>
 					</label>
 				</div>
