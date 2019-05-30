@@ -5,7 +5,7 @@ class Produk{
             $sql = "SELECT 
                     * 
                     FROM 
-                    produk WHERE id = ?";
+                    produk WHERE produk.slug = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
             if($prep->rowCount()){
@@ -28,7 +28,7 @@ class Produk{
             $thumbnail_foto = Input::file('foto')->upload('public/uploads');
             $id_satuan      = Input::post('satuan');
             $id_kategori_produk = Input::post('kategoriproduk');
-
+            $slug = url_slug($nama);
             if($thumbnail_foto === false){
                 msg('Gambar thumbnail tidak bisa masuk', 'warning');
                 return;
@@ -46,10 +46,10 @@ class Produk{
             $gallery_foto = json_encode($gallery_foto);
 
 
-            $sql = "INSERT INTO produk(nama,deskripsi,konten, harga_jual, harga_beli, thumbnail_foto, gallery_foto, stok, id_satuan, id_kategori_produk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO produk(nama,deskripsi,konten, harga_jual, harga_beli, thumbnail_foto, gallery_foto, stok, slug, id_satuan, id_kategori_produk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
             $prep = DB::connection()->prepare($sql);
 
-            $prep->execute([$nama, $deskripsi, $konten,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk]);
+            $prep->execute([$nama, $deskripsi, $konten,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok,$slug, $id_satuan, $id_kategori_produk]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
@@ -66,13 +66,11 @@ class Produk{
     function hapus(){
         try{
             DB::connection()->beginTransaction();
-            $id = Input::post('id');
-            $sql = "DELETE FROM petani WHERE id_user = ?";
+            $id = Input::post('slug');
+            $sql = "DELETE FROM produk WHERE slug = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
-            $sql = "DELETE FROM akun WHERE id = ?";
-            $prep = DB::connection()->prepare($sql);
-            $prep->execute([$id]);
+            
             if($prep->rowCount()){
                 msg('Data berhasil dihapus', 'info');
             }else{
@@ -82,7 +80,7 @@ class Produk{
         }catch (PDOException $e){
             DB::connection()->rollBack();
             msg('Kesalahan : '.$e->getMessage(), 'danger');
-            redirect('control-panel/pengguna');
+            redirect('control-panel/produk');
         }
     }
      function edit($id){

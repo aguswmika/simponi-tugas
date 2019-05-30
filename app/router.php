@@ -62,6 +62,7 @@ $routes['control-panel/kategori-produk/update/:id'] = 'KategoriProdukController@
 $routes['control-panel/produk'] = 'ProdukController@index';
 $routes['control-panel/produk/create'] = 'ProdukController@create';
 $routes['control-panel/produk/add'] = 'ProdukController@add';
+$routes['control-panel/produk/destroy'] = 'ProdukController@destroy';
 $routes['control-panel/produk/edit/:id'] = 'ProdukController@edit';
 $routes['control-panel/produk/update/:id'] = 'ProdukController@update';
 
