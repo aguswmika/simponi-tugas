@@ -1,4 +1,4 @@
-<?php
+        <?php
 Class KategoriProduk{
 	function tambah(){
 	    try{

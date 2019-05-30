@@ -73,6 +73,9 @@ $routes['control-panel/pengguna/edit/:id'] = 'PenggunaController@edit';
 $routes['control-panel/pengguna/update/:id'] = 'PenggunaController@update';
 $routes['control-panel/pengguna/destroy'] = 'PenggunaController@destroy';
 
+//blog
+$routes['control-panel/blog'] = 'BlogController@index';
+
 // autentikasi
 $routes['login'] = 'LandingController@login';
 $routes['dologin'] = 'LandingController@doLogin';
