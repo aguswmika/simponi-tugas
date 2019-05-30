@@ -35,7 +35,14 @@ if(!function_exists('base_url')){
 		return $http.$_SERVER['HTTP_HOST'].$url.$str;
 	}
 }
-
+if(!function_exists('getStatus')){
+	function getStatus(){
+		return [
+			'aktif' => 'Aktif',
+			'nonaktif' => 'Nonaktif'
+		];
+	}
+}
 if(!function_exists('msg')){
 	function msg($msg = NULL, $sts = 'info'){
 		if(empty($msg)){

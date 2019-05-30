@@ -29,7 +29,14 @@
 			->addRow('Harga Beli','harga_beli')
 			->addRow('Stok','stok')
 			->addRow('Aksi',function($data){
-				return '<a href="'.base_url(''.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>';
+				return '
+					<a href="'.base_url('control-panel/produk/edit/'.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>
+                    <form action="'.base_url('control-panel/produk/destroy').'" method="post" style="display: inline">
+                        <input type="hidden" name="id" value="'.$data['id'].'">
+                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini?\')">Hapus</button>
+                    </form>
+
+				';
 			})
 			->search([
 				'id',
@@ -53,7 +60,50 @@
 
        		return view('admin/produk/add', $data);
     	}
+    	public function edit($id){
+			$produk = $this->produk->getByIdProduk($id);
 
+	        if($produk === false){
+
+	            abort(404);
+	        }
+
+	        $data = [
+	            'title' => 'Edit Produk',
+	            'item'  => $produk,
+	            'satuan'  => $this->satuan->getSatuan(),
+	            'kategoriproduk' => $this->kategoriProduk->ambilData()
+	        ];
+
+	        return view('admin/produk/edit', $data);
+		}
+		function update($id){
+	        $config = [
+	            'nama' => [
+	                'required' => true
+	            ],
+	            'harga_jual' => [
+	                'required' => true
+	            ],
+	            'harga_beli' => [
+	                'required' => true
+	            ],
+	            'stok' => [
+	                'required' => true
+	            ]
+	        ];
+
+	        $valid = new Validation($config);
+
+	        if($valid->run()){
+	            $this->produk->edit($id);
+
+	            redirect('control-panel/produk/edit/'.$id);
+	        }else{
+	            msg($valid->getErrors(), 'danger');
+	            redirect('control-panel/produk/edit/'.$id);
+	        }
+    	}
     	public function create(){
 	         $config = [
 	            'nama' => [
