@@ -1,7 +1,7 @@
 <?php view('partial/header', $data) ?>
 
 <section id="hero" class="no-pad">
-	<a href="#" class="btn btn-primary btn-sign-up content-center">lihat cara kerja</a>
+	<div href="#" class="btn btn-primary btn-sign-up content-center">lihat apa yang kita punya</div>
 </section>
 <section id="feature" class="bg-gray">
 	<div class="container">

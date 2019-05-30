@@ -13,7 +13,7 @@
                     <a href="<?php echo base_url('edukasi/'.$item->slug) ?>">
                         <div class="content-container">
                             <div class="picture-container feature-card">
-                                <img src="<?php echo base_url($item->icon) ?> " alt="" class="img-fluid">
+                                <img src="<?php echo base_url($item->icon) ?> " alt="<?php echo $item->nama ?> picture" class="img-fluid">
                             </div>
                             <div class="caption-container">
                                 <h4><?php echo $item->nama ?></h4>
