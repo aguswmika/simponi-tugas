@@ -17,7 +17,7 @@
 					<a class="nav-link" href="<?php echo base_url('why-simponi') ?>">kenapa simponi?</a>
 				</li>
 				<li class="nav-item <?php echo (Input::url(0) === 'marketplace' ? 'active' : '') ?>">
-					<a class="nav-link" href="<?php echo base_url('marketplace') ?>">produk kami</a>
+					<a class="nav-link" href="<?php echo base_url('marketplace') ?>">marketplace</a>
 				</li>
 				<li class="nav-item <?php echo (Input::url(0) === 'blog' ? 'active' : '') ?>">
 					<a class="nav-link" href="<?php echo base_url('blog') ?>">blog</a>

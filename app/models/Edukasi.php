@@ -109,7 +109,18 @@ class Edukasi{
             DB::connection()->beginTransaction();
 
             $id = Input::post('slug');
-           
+
+            $data = $this->getBySlug($id);
+
+            if($data === false){
+                return false;
+            }
+
+            $sql = "DELETE FROM lihat_pembelajaran WHERE id_pembelajaran = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$data->id]);
+
             $sql = "DELETE FROM pembelajaran WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);

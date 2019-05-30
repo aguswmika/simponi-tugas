@@ -34,18 +34,7 @@ class LandingController
     	return view('landing/blog', $data);
     }
 
-    function marketplace(){
-    	$data = [
-    		'title' => 'marketplace'
-    	];
-    	return view('landing/marketplace',$data);
-    }
-    function product_detail(){
-    	$data = [
-    		'title' => 'product-detail'
-    	];
-    	return view('landing/product-detail',$data);
-    }
+
     function cart(){
     	$data = [
     		'title' => 'shopping-cart'
@@ -58,7 +47,6 @@ class LandingController
     	];
     	return view('landing/forum',$data);
     }
-
 
 
 	function login(){

@@ -22,13 +22,17 @@ $routes['default'] = 'LandingController@index';
 $routes['why-simponi'] = 'LandingController@whysimponi';
 $routes['contact-us'] = 'LandingController@kontak';
 $routes['blog'] = 'LandingController@blog';
-$routes['edukasi'] = 'LandingEdukasiController@index';
-$routes['pembelajaran/:slug'] = 'LandingEdukasiController@pembelajaran';
-$routes['edukasi/:id'] = 'LandingEdukasiController@detail';
-$routes['marketplace'] = 'LandingController@marketplace';
-$routes['product-detail'] = 'LandingController@product_detail';
 $routes['shopping-cart'] = 'LandingController@cart';
 $routes['forum'] = 'LandingController@forum';
+
+// edukasi
+$routes['edukasi'] = 'LandingEdukasiController@index';
+$routes['edukasi/:id'] = 'LandingEdukasiController@detail';
+$routes['pembelajaran/:slug'] = 'LandingEdukasiController@pembelajaran';
+
+// marketplace
+$routes['marketplace'] = 'MarketplaceController@index';
+$routes['produk/:id'] = 'MarketplaceController@detail';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';
@@ -87,6 +91,5 @@ $routes['login'] = 'LandingController@login';
 $routes['dologin'] = 'LandingController@doLogin';
 $routes['register'] = 'LandingController@register';
 $routes['doregister'] = 'LandingController@doRegister';
-
 $routes['logout'] = 'DashboardController@logout';
 

@@ -38,7 +38,7 @@ Class KategoriPembelajaran{
                 $sql = "UPDATE kategori_pembelajaran SET nama = ?, deskripsi = ?, icon = ? WHERE id = ?";
 
                 $prep = DB::connection()->prepare($sql);
-                $prep->execute([$nama,$deskripsi,$file,$id]);
+                $prep->execute([$nama,$deskripsi,str_replace('public/', '',$file),$id]);
             }
             
             if($prep->rowCount()){
@@ -124,6 +124,17 @@ Class KategoriPembelajaran{
             DB::connection()->beginTransaction();
 
             $id = Input::post('slug');
+
+            $data = $this->getBySlug($id);
+
+            if($data === false){
+                return false;
+            }
+
+            $sql = "DELETE FROM pembelajaran WHERE id_kategori_pembelajaran = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$data->id]);
            
             $sql = "DELETE FROM kategori_pembelajaran WHERE slug = ?";
 

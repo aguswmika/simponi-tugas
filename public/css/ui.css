@@ -2042,7 +2042,10 @@ ul.row, ul.row-sm {
     display: block; }
 
 .price-new, .price {
-  margin-right: 5px; }
+  margin-right: 5px;
+  color: #ff5722;
+  font-weight: bold;
+}
 
 .price-old {
   color: #999; }
