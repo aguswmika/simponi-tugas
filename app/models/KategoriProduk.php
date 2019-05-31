@@ -64,13 +64,13 @@ Class KategoriProduk{
             $nama = Input::post('nama');
             $id = Input::url(3);
            
-            $sql = "UPDATE kategori_produk SET nama = ? WHERE id = ?";
+            $sql = "UPDATE kategori_produk SET nama = ? WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama, $id]);
+           
 
 
-            if($prep->rowCount()){
+            if($prep->execute([$nama, $id])){
                 msg('Data berhasil diedit', 'info');
             }else{
                 msg('Data gagal diedit', 'danger');
@@ -99,7 +99,7 @@ Class KategoriProduk{
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$data->id]);
-           
+            
             $sql = "DELETE FROM kategori_produk WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);

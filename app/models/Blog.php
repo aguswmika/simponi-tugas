@@ -23,14 +23,15 @@ class Blog{
             $deskripsi = Input::post('deskripsi');
             $konten = Input::post('konten');
             $status = Input::post('status');
+            $thumbnail_foto = Input::file('foto')->upload('public/uploads');
             $slug = url_slug($judul);
 
             
 
-            $sql = "INSERT INTO blog(judul, deskripsi, konten, status,slug) VALUES(?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO blog(judul, deskripsi, konten, status,thumbnail_foto,slug) VALUES(?, ?, ?, ?, ?,?)";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$judul, $deskripsi, $konten,$status,$slug]);
+            $prep->execute([$judul, $deskripsi, $konten,$status,str_replace('public/', '', $thumbnail_foto),$slug]);
 
 
             if($prep->rowCount()){
