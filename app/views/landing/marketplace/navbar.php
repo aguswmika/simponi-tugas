@@ -34,7 +34,7 @@
                 <div class="col-lg-9-24 col-sm-12">
                     <div class="widgets-wrap float-right row no-gutters py-1">
                         <div class="col-auto">
-                            <a href="#" class="widget-header">
+                            <a href="<?php echo base_url('shopping-cart') ?>" class="widget-header">
                                 <div class="icontext">
                                     <div class="icon-wrap"><i class="text-success icon-sm fa fa-shopping-cart"></i></div>
                                     <div class="text-wrap text-dark">
