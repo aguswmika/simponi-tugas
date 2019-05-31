@@ -1,13 +1,15 @@
 <?php
 class LandingController
 {
-	private $akun, $kategoriPembelajaran;
+	private $akun, $kategoriPembelajaran, $blog;
 
 	function __construct()
 	{
 		$this->akun = model('akun');
 		$this->kategoriPembelajaran = model('kategoripembelajaran');
+		$this->blog = model('Blog');
 	}
+
 	function index(){
 		$data = [
 
@@ -29,7 +31,8 @@ class LandingController
     }
     function blog(){
     	$data = [
-    		'title' => 'blog'
+    		'title' => 'blog',
+    		'blogs' => $this->blog->getData()
     	];
     	return view('landing/blog', $data);
     }
@@ -61,6 +64,7 @@ class LandingController
 			'nama_belakang' => [
 				'required' => true
 			],
+
 			'jenis_kelamin' => [
 				'required' => true
 			],

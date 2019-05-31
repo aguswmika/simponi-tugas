@@ -61,7 +61,16 @@
                                     <?php } ?>
                                 </select>
                             </div>
-
+                            <div class="form-group">
+                                <label>Foto</label><br>
+                                <div class="text-foto">
+                                    <b>Nama File:</b> <span id="namaFoto"></span>
+                                </div>
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn btn-info btn-xs" id="labelFoto">Tambahkan foto</button>
+                                    <input type="file" id="inputFoto" name="foto" accept=".png, .jpg, .jpeg" />
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </div>
@@ -80,5 +89,26 @@
 		editor = CKEDITOR.replace('editor');
 		CKFinder.setupCKEditor( editor );
         $('#text').show();
+        $('#inputFoto').change(function(){
+            var foto  = $(this)[0].files[0],
+                label = $('#labelFoto'),
+                nama  = $('#namaFoto');
+
+            if(typeof foto != 'undefined'){
+                if(foto.size > 0){
+                    label.text('Ganti foto');
+                    label.removeClass('btn-info');
+                    label.addClass('btn-warning');
+                    nama.text(foto.name);
+                    $('.text-foto').show();
+                }
+            }else{
+                label.text('Tambahkan foto');
+                label.addClass('btn-info');
+                label.removeClass('btn-warning');
+                nama.text('');
+                $('.text-foto').hide();
+            }
+        })
 	});
 </script>

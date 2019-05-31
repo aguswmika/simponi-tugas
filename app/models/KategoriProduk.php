@@ -3,10 +3,11 @@ Class KategoriProduk{
 	function tambah(){
 	    try{
             $nama = Input::post('nama');
-            $sql = "INSERT INTO kategori_produk(nama) VALUES(?)";
+            $slug = url_slug($nama);
+            $sql = "INSERT INTO kategori_produk(nama,slug) VALUES(?,?)";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama]);
+            $prep->execute([$nama,$slug]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
@@ -24,7 +25,7 @@ Class KategoriProduk{
                     * 
                     FROM 
                     kategori_produk
-                    WHERE kategori_produk.id = ?";
+                    WHERE kategori_produk.slug = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
 
@@ -63,13 +64,13 @@ Class KategoriProduk{
             $nama = Input::post('nama');
             $id = Input::url(3);
            
-            $sql = "UPDATE kategori_produk SET nama = ? WHERE id = ?";
+            $sql = "UPDATE kategori_produk SET nama = ? WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama, $id]);
+           
 
 
-            if($prep->rowCount()){
+            if($prep->execute([$nama, $id])){
                 msg('Data berhasil diedit', 'info');
             }else{
                 msg('Data gagal diedit', 'danger');
@@ -86,9 +87,20 @@ Class KategoriProduk{
         try{
             DB::connection()->beginTransaction();
 
-            $id = Input::post('id');
-           
-            $sql = "DELETE FROM kategori_produk WHERE id = ?";
+            $id = Input::post('slug');
+
+            $data = $this->getByIdKategoriProduk($id);
+
+            if($data === false){
+                return false;
+            }
+
+            $sql = "DELETE FROM produk WHERE id_kategori_produk = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$data->id]);
+            
+            $sql = "DELETE FROM kategori_produk WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);

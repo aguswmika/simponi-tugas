@@ -164,11 +164,11 @@ class Edukasi{
             $sql = "UPDATE pembelajaran SET judul = ?, deskripsi = ?, konten = ?,tipe_pembelajaran=?,status=?,urutan = ?, id_kategori_pembelajaran = ? WHERE id = ?";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$judul, $deskripsi, $konten, $tipe_pembelajaran,$status,$urutan,$kategori,$id]);
+            //$prep->execute([$judul, $deskripsi, $konten, $tipe_pembelajaran,$status,$urutan,$kategori,$id]);
 
            
 
-            if($prep->rowCount()){
+            if($prep->execute([$judul, $deskripsi, $konten, $tipe_pembelajaran,$status,$urutan,$kategori,$id])){
                 msg('Data berhasil diedit', 'info');
             }else{
                 msg('Data gagal diedit', 'danger');

@@ -63,7 +63,7 @@
 		</div>
 		<!-- /.login-box-body -->
 		<div class="text-center" style="display: block;margin-top: 10px;">
-			<a href="<?php echo base_url('register') ?>">Belum punya akun? Silahkan daftar disini!</a>
+			<a href="<?php echo base_url('login') ?>">Sudah regis? login dulu</a>
 		</div>
 	</div>
 	<!-- /.login-box -->

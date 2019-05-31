@@ -174,9 +174,9 @@ class Produk{
             $sql = "UPDATE produk SET nama = ?,deskripsi = ? , konten = ?,  harga_jual = ?, harga_beli = ?,thumbnail_foto=?, gallery_foto = ?,stok=?,id_satuan = ?, id_kategori_produk = ? WHERE id = ?";
             $prep = DB::connection()->prepare($sql);
 
-            $prep->execute([$nama,$deskripsi ,$konten ,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk,$id]);
+            
 
-            if($prep->rowCount()){
+            if($prep->execute([$nama,$deskripsi ,$konten ,$harga_jual, $harga_beli, str_replace('public/', '', $thumbnail_foto), $gallery_foto, $stok, $id_satuan, $id_kategori_produk,$id])){
                 msg('Data berhasil diedit', 'info');
             }else{
                 msg('Data gagal diedit', 'danger');

@@ -27,7 +27,7 @@
                                 $total_harga = 0;
 
                                 foreach ($keranjang as $item) {
-                                    $total_harga = $item->harga_jual * $item->jumlah;
+                                    $total_harga+= $item->harga_jual * $item->jumlah;
                             ?>
 								<tr>
 									<td>
