@@ -77,6 +77,7 @@ section{
 
 .feature-card{
 	position: relative;
+	background-color: transparent;
 }
 .feature-card:hover:before{
 	opacity: 0.8;
@@ -90,7 +91,7 @@ section{
 	top: 0;
 	bottom: 0;
 	background-color: #8a8a8a;
-	opacity: 0.2;
+	opacity: 0;
 	position: absolute;
 	z-index: 1;
 }
@@ -303,4 +304,8 @@ section{
 
 .content-container-shadow:hover{
 	box-shadow: 0px 4px 20px 5px rgba(0,0,0,.1);
+}
+
+.card-product .img-wrap img{
+	height: 100%;
 }

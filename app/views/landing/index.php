@@ -10,7 +10,7 @@
 				<a href="<?php echo base_url('edukasi') ?>">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">belajar</h3> -->
-						<img src="<?php echo base_url('img/belajar.jpg') ?>" style="img-fluid" alt="">
+						<img src="<?php echo base_url('img/belajar.png') ?>" style="img-fluid" alt="">
 					</div>
 				</a>
 			</div>
@@ -18,7 +18,7 @@
 				<a href="<?php echo base_url('marketplace') ?>">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">jual/beli</h3> -->
-						<img src="<?php echo base_url('img/jualbeli.jpg') ?>" style="img-fluid" alt="">
+						<img src="<?php echo base_url('img/marketplace.png') ?>" style="img-fluid" alt="">
 					</div>
 				</a>
 			</div>
@@ -26,7 +26,7 @@
 				<a href="<?php echo base_url('forum') ?>">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">diskusi</h3> -->
-						<img src="<?php echo base_url('img/diskusi.jpg') ?>" style="img-fluid" alt="">
+						<img src="<?php echo base_url('img/diskusi.png') ?>" style="img-fluid" alt="">
 					</div>
 				</a>
 			</div>
@@ -34,7 +34,7 @@
 				<a href="#">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">tips n trik</h3> -->
-						<img src="<?php echo base_url('img/tips.jpg') ?>" style="img-fluid" alt="">
+						<img src="<?php echo base_url('img/tips.png') ?>" style="img-fluid" alt="">
 					</div>
 				</a>
 			</div>

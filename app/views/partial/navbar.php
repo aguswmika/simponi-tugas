@@ -29,6 +29,7 @@
 						<div class="nav-item dropdown" style="cursor: pointer;">
 							<span class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color: #9fbd12"></i> <?php echo Akun::getLogin()->username ?></span>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<?php if(Akun::getLogin()->hak_akses ==  1) { ?><a class="nav-link dropdown-item" href="<?php echo base_url('control-panel') ?>"> Control Panel</a> <?php } ?>
 								<a class="nav-link dropdown-item" href="<?php echo base_url('logout') ?>"> Logout</a>
 							</div>
 						</div>

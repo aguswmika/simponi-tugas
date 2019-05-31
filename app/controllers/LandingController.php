@@ -35,12 +35,6 @@ class LandingController
     }
 
 
-    function cart(){
-    	$data = [
-    		'title' => 'shopping-cart'
-    	];
-    	return view('landing/shopping-cart',$data);
-    }
     function forum(){
     	$data = [
     		'title' => 'forum'

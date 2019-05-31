@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row">
             <?php foreach ($kategori as $item) { ?>
-            <div class="col-md-4">
+            <div class="col-md-4" style="margin-bottom: 15px;">
                 <a href="<?php echo base_url('edukasi/'.$item->slug) ?>">
                 <div class="content-container bottom-card content-container-shadow">
                     <div class="card-container">

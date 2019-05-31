@@ -22,7 +22,6 @@ $routes['default'] = 'LandingController@index';
 $routes['why-simponi'] = 'LandingController@whysimponi';
 $routes['contact-us'] = 'LandingController@kontak';
 $routes['blog'] = 'LandingController@blog';
-$routes['shopping-cart'] = 'LandingController@cart';
 $routes['forum'] = 'LandingController@forum';
 
 // edukasi
@@ -32,7 +31,9 @@ $routes['pembelajaran/:slug'] = 'LandingEdukasiController@pembelajaran';
 
 // marketplace
 $routes['marketplace'] = 'MarketplaceController@index';
+$routes['keranjang'] = 'MarketplaceController@cart';
 $routes['produk/:id'] = 'MarketplaceController@detail';
+$routes['cart/add/:id'] = 'MarketplaceController@addcart';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';
