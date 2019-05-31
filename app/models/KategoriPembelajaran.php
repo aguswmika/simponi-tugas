@@ -120,7 +120,7 @@ Class KategoriPembelajaran{
     public function hapus(){
         try{
 
-            //belum jadiD
+            
             DB::connection()->beginTransaction();
 
             $id = Input::post('slug');

@@ -3,10 +3,11 @@ Class KategoriProduk{
 	function tambah(){
 	    try{
             $nama = Input::post('nama');
-            $sql = "INSERT INTO kategori_produk(nama) VALUES(?)";
+            $slug = url_slug($nama);
+            $sql = "INSERT INTO kategori_produk(nama,slug) VALUES(?,?)";
 
             $prep = DB::connection()->prepare($sql);
-            $prep->execute([$nama]);
+            $prep->execute([$nama,$slug]);
 
             if($prep->rowCount()){
                 msg('Data berhasil dimasukkan', 'info');
@@ -24,7 +25,7 @@ Class KategoriProduk{
                     * 
                     FROM 
                     kategori_produk
-                    WHERE kategori_produk.id = ?";
+                    WHERE kategori_produk.slug = ?";
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
 
@@ -86,9 +87,20 @@ Class KategoriProduk{
         try{
             DB::connection()->beginTransaction();
 
-            $id = Input::post('id');
+            $id = Input::post('slug');
+
+            $data = $this->getByIdKategoriProduk($id);
+
+            if($data === false){
+                return false;
+            }
+
+            $sql = "DELETE FROM produk WHERE id_kategori_produk = ?";
+
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$data->id]);
            
-            $sql = "DELETE FROM kategori_produk WHERE id = ?";
+            $sql = "DELETE FROM kategori_produk WHERE slug = ?";
 
             $prep = DB::connection()->prepare($sql);
             $prep->execute([$id]);
