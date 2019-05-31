@@ -85,7 +85,7 @@
                                     <?php } ?>
                                 </select>
                             </div>
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label>Foto</label><br>
                                 <?php echo (!empty($item->thumbnail_foto) ? '<img style="max-width: 250px;" src="'.base_url($item->thumbnail_foto).'" alt=""><br>' : '') ?>
                                 <div class="text-foto">
