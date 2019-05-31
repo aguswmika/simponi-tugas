@@ -31,9 +31,9 @@
             <?php foreach ($kategori as $item) { ?>
             <div class="col-md-4">
                 <a href="<?php echo base_url('edukasi/'.$item->slug) ?>">
-                <div class="content-container bottom-card">
+                <div class="content-container bottom-card content-container-shadow">
                     <div class="card-container">
-                        <img class="img-fluid" src="<?php echo base_url($item->icon) ?> " alt="<?php echo $item->nama ?>">
+                        <img class="img-fluid" src="<?php echo base_url($item->icon) ?> " alt="<?php echo $item->nama ?>" style="height: 100%">
                     </div>
                     <div class="caption-container">
                         <h1 style="font-family: 'Poppins', sans-serif !important;"><?php echo $item->nama ?></h1>
