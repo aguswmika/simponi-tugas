@@ -18,7 +18,7 @@
 				<a href="<?php echo base_url('marketplace') ?>">
 					<div class="feature-card">
 						<!-- <h3 class="feature-card-title">jual/beli</h3> -->
-						<img src="<?php echo base_url('img/jualbeli.jpg') ?>" style="img-fluid" alt="">
+						<img src="<?php echo base_url('img/marketplace.png') ?>" style="img-fluid" alt="">
 					</div>
 				</a>
 			</div>
