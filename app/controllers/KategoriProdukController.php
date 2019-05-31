@@ -22,9 +22,9 @@
 			->addRow('Nama','nama')
 			->addRow('Aksi',function($data){
 				return '
-					<a href="'.base_url('control-panel/kategori-produk/edit/'.$data['id']).'" class="btn btn-warning btn-xs">Edit</a>
+					<a href="'.base_url('control-panel/kategori-produk/edit/'.$data['slug']).'" class="btn btn-warning btn-xs">Edit</a>
                     <form action="'.base_url('control-panel/kategori-produk/destroy').'" method="post" style="display: inline">
-                        <input type="hidden" name="id" value="'.$data['id'].'">
+                        <input type="hidden" name="slug" value="'.$data['slug'].'">
                         <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm(\'Apakah yakin ingin melanjutkan aksi ini?\')">Hapus</button>
                     </form>
 
@@ -105,7 +105,7 @@
     }
 	public function destroy(){
         $config = [
-            'id' => [
+            'slug' => [
                 'required' => true
             ]
         ];
