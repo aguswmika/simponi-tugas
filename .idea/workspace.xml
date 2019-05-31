@@ -2,32 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085c3a88-9e9f-4763-8e00-5434b678711f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/4_love.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/Ebb and flow diagram.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/Sistem-Hidroponik-NFT-Nutrient-Film-Technique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/Sistem-Hidroponik-Wick-System-Sistem-Sumbu-600x600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/aeroponik.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/bercocok-tanam-hidroponik.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/cara-menanam-hidroponik-untuk-pemula.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/download (1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/download.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/dwc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/hidroponik-sistem-fertigasi-untuk-tanaman-tomat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/shutterstock_1054807595.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/KategoriProdukController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/KategoriProdukController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/LandingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/LandingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Edukasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Edukasi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/KategoriPembelajaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/KategoriPembelajaran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/KategoriProduk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/KategoriProduk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/MarketplaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MarketplaceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Produk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/blog/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/blog/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/blog/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/blog/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/produk/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/produk/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/landing/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/landing/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/landing/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/landing/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/landing/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/landing/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/partial/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partial/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,33 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/detail.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="72" selection-end-column="62" />
-              <folding>
-                <element signature="n#style#0;n#select#0;n#dd#0;n#dl#0;n#div#0;n#div#2;n#article#0;n#aside#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#form#1;n#article#0;n#aside#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/navbar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/router.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="238">
+              <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -85,26 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/MarketplaceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/LandingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1089">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="231">
+              <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -112,26 +50,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Produk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="267" column="41" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
+            <state relative-caret-position="381">
+              <caret line="327" column="79" lean-forward="true" selection-start-line="327" selection-start-column="79" selection-end-line="327" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partial/navbar.php">
+        <entry file="file://$PROJECT_DIR$/app/models/Edukasi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="30" column="92" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
+            <state relative-caret-position="30">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/landing/index.php">
+        <entry file="file://$PROJECT_DIR$/app/models/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+            <state relative-caret-position="30">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -152,6 +99,8 @@
       <find>Another</find>
       <find>content-conta</find>
       <find>featur</find>
+      <find>last</find>
+      <find>lastI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,11 +154,11 @@
         <option value="$PROJECT_DIR$/app/views/landing/edukasi/index.php" />
         <option value="$PROJECT_DIR$/app/views/landing/marketplace/detail.php" />
         <option value="$PROJECT_DIR$/app/controllers/LandingController.php" />
+        <option value="$PROJECT_DIR$/app/views/landing/marketplace/navbar.php" />
+        <option value="$PROJECT_DIR$/app/views/partial/navbar.php" />
         <option value="$PROJECT_DIR$/app/controllers/MarketplaceController.php" />
         <option value="$PROJECT_DIR$/app/router.php" />
-        <option value="$PROJECT_DIR$/app/views/landing/marketplace/navbar.php" />
         <option value="$PROJECT_DIR$/app/models/Produk.php" />
-        <option value="$PROJECT_DIR$/app/views/partial/navbar.php" />
         <option value="$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php" />
       </list>
     </option>
@@ -394,7 +343,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559288703510" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559290207120" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -455,18 +404,18 @@
       <workItem from="1558595971300" duration="14167000" />
       <workItem from="1558888617066" duration="19694000" />
       <workItem from="1559140763054" duration="1901000" />
-      <workItem from="1559206184480" duration="29057000" />
+      <workItem from="1559206184480" duration="30372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99855000" />
+    <option name="totallyTimeSpent" value="101170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="819" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17596567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17596567" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -483,7 +432,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3287483" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" visible="true" weight="0.3287483" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" visible="true" weight="0.3287483" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.3287483" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -542,13 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -776,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Edukasi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="163" column="62" selection-start-line="163" selection-start-column="62" selection-end-line="163" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -804,13 +739,6 @@
           <folding>
             <element signature="e#1172#1204#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Akun.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -842,21 +770,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="231">
           <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="72" selection-end-column="62" />
           <folding>
             <element signature="n#style#0;n#select#0;n#dd#0;n#dl#0;n#div#0;n#div#2;n#article#0;n#aside#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#1;n#article#0;n#aside#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/LandingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1085">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -874,31 +802,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Produk.php">
+    <entry file="file://$PROJECT_DIR$/app/router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="267" column="41" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LandingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1089">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="290">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/MarketplaceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+        <state relative-caret-position="231">
+          <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Akun.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="132" column="53" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Edukasi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Produk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="327" column="79" lean-forward="true" selection-start-line="327" selection-start-column="79" selection-end-line="327" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/landing/marketplace/shopping-cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        <state relative-caret-position="238">
+          <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
         </state>
       </provider>
     </entry>

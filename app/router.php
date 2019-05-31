@@ -34,6 +34,7 @@ $routes['marketplace'] = 'MarketplaceController@index';
 $routes['keranjang'] = 'MarketplaceController@cart';
 $routes['produk/:id'] = 'MarketplaceController@detail';
 $routes['cart/add/:id'] = 'MarketplaceController@addcart';
+$routes['bayar'] = 'MarketplaceController@bayar';
 
 // dashboard
 $routes['control-panel'] = 'DashboardController@index';

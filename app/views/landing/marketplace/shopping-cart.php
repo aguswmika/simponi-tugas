@@ -11,7 +11,7 @@
 
 			<div class="row">
 				<main class="col-sm-9">
-
+                    <form method="post" action="<?php echo base_url('bayar') ?>">
 					<div class="card">
 						<table class="table table-hover shopping-cart-wrap">
 							<thead class="text-muted">
@@ -25,7 +25,9 @@
 							<tbody>
                             <?php
                                 $total_harga = 0;
-
+                                if($keranjang === false){
+                                    echo '<tr><td colspan="4">Belum ada memesan</td></tr>';
+                                }else{
                                 foreach ($keranjang as $item) {
                                     $total_harga+= $item->harga_jual * $item->jumlah;
                             ?>
@@ -52,11 +54,11 @@
 										</div> <!-- price-wrap .// -->
 									</td>
 									<td class="text-right"> 
-										<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-										<a href="" class="btn btn-danger"><i class="fa fa-times"></i></a>
+										<a data-original-title="Save to Wishlist" title="" href="#" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
+										<a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a>
 									</td>
 								</tr>
-                            <?php } ?>
+                            <?php }} ?>
 							</tbody>
 						</table>
 					</div> <!-- card.// -->
@@ -78,10 +80,11 @@
 					</dl>
 					<hr>
 					<div>
-						<button class="btn btn-success"> <i class="fa fa-shopping-cart"></i> Bayar Sekarang</button>
+						<button class="btn btn-success" type="submit"> <i class="fa fa-shopping-cart"></i> Bayar Sekarang</button>
 					</div>
 					</aside> <!-- col.// -->
 				</div>
+        </form>
 		</div> <!-- container .//  -->>
 	</section>
 <script src="<?php echo base_url('plugins/fancybox/fancybox.min.js') ?>" type="text/javascript"></script>

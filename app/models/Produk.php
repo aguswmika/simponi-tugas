@@ -282,4 +282,58 @@ class Produk{
             return false;
         }
     }
+
+    function bayar($id_petani){
+        try {
+            $sql = "SELECT 
+                    keranjang.*, produk.*, satuan.id as satuan
+                    FROM 
+                    keranjang
+                    INNER JOIN produk ON produk.id = keranjang.id_produk 
+                    INNER JOIN satuan ON satuan.id = produk.id_satuan
+                    WHERE id_petani = ?";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute([$id_petani]);
+
+            if($prep->rowCount()){
+
+
+                $data = $prep->fetchAll(PDO::FETCH_OBJ);
+                $id_penjualan = 0;
+                $total_harga = 0;
+                $total_jumlah = 0;
+                $sqlbatch = '';
+                $execbatch = [];
+
+                foreach ($data as $item){
+                    $sqlbatch .= "INSERT INTO penjualan_detail(id_penjualan, id_barang, jumlah, harga, id_satuan) VALUES(?, ?, ?, ?, ?);";
+                    $total_harga += $item->harga_jual * $item->jumlah;
+                    $total_jumlah += $item->jumlah;
+                }
+
+
+                $sql = 'INSERT INTO penjualan (id_petani, total_jumlah, total_harga, status) VALUES (?, ?, ?, ?)';
+
+                $prep = DB::connection()->prepare($sql);
+                $prep->execute([$id_petani, $total_jumlah, $total_harga, 'lunas']);
+
+                foreach ($data as $item){
+                    array_push($execbatch, DB::connection()->lastInsertId(), $item->id, $item->jumlah, $item->harga_jual, $item->satuan);
+                }
+
+                $prep = DB::connection()->prepare($sqlbatch);
+                $prep->execute($execbatch);
+
+
+                $prep = DB::connection()->prepare("DELETE FROM keranjang WHERE id_petani = ?");
+                $prep->execute([$id_petani]);
+
+            }
+            return false;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+            return false;
+        }
+    }
 }

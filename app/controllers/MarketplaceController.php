@@ -8,7 +8,7 @@ class MarketplaceController
         $this->akun = model('akun');
         $this->produk = model('produk');
 
-        $this->jml_keranjang = $this->produk->getJmlKeranjang(Akun::getLogin()->id)->jml;
+        @$this->jml_keranjang = $this->produk->getJmlKeranjang(Akun::getLogin()->id)->jml;
     }
 
     function index(){
@@ -37,6 +37,7 @@ class MarketplaceController
     }
 
     function addCart($id){
+        checkIfNotLogin();
         $config = [
             'jumlah' => [
                 'required' => true,
@@ -59,12 +60,24 @@ class MarketplaceController
     }
 
     function cart(){
+        checkIfNotLogin();
         $data = [
             'title' => 'Keranjang belanja',
             'keranjang' => $this->produk->getKeranjang(Akun::getLogin()->id),
             'jml_keranjang' => $this->jml_keranjang
         ];
         return view('landing/marketplace/shopping-cart',$data);
+    }
+
+    function bayar(){
+        checkIfNotLogin();
+
+
+        $this->produk->bayar(Akun::getLogin()->id);
+        msg('Berhasil dibayarkan');
+
+
+        redirect('keranjang');
     }
 
 
