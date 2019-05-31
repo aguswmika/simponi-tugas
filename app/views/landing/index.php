@@ -1,7 +1,7 @@
 <?php view('partial/header', $data) ?>
 
 <section id="hero" class="no-pad">
-	<div href="#" class="btn btn-primary btn-sign-up content-center">lihat apa yang kita punya</div>
+	<a class="btn btn-primary btn-sign-up content-center" href="<?php echo base_url('why-simponi') ?>">Siapa Kita?</a>
 </section>
 <section id="feature" class="bg-gray">
 	<div class="container">
