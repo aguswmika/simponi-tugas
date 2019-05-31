@@ -97,4 +97,25 @@ class Blog{
             redirect('control-panel/blog');
         }
     }
+
+    function getData(){
+        try {
+            $sql = "SELECT 
+                    * 
+                    FROM 
+                    blog
+                    ORDER BY id DESC
+                    LIMIT 0,10";
+            $prep = DB::connection()->prepare($sql);
+            $prep->execute();
+            if($prep->rowCount()){
+                return $prep->fetchAll(PDO::FETCH_OBJ);
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }

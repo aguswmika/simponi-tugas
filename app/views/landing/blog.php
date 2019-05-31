@@ -9,42 +9,26 @@
 		    <div class="col-8" style="margin-left: -2rem;">
 		      	<div class="container">
 				  	<div class="row">
+				  	<?php foreach ($blogs as $item) { ?>
 					    <div class="col" align="center">
 					    	<div class="card" style="width: 18rem;">
-								<img src="../public/img/3.jpg" class="card-img-top" alt="...">
+								<img src="<?php echo base_url($item->thumbnail_foto) ?>" class="card-img-top" alt="...">
 								<div class="card-body"  align="left">
 									<div class="blog-card-title">
-										<small class="form-text text-muted">-Giri Kusuma</small>
+										<h4 class="form-text text-muted"><?php echo $item->judul ?></h4>
 										<br>
 									</div>
 									<div class="blog-card-content">
-										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+										<small class="card-text"><?php echo $item->deskripsi ?></small>
 										<br>
 									</div>
 									<div class="blog-card-foot">
-										<small class="form-text text-muted">By Giri Kusuma</small>
+										<small class="form-text text-muted">by simponi</small>
 									</div>
 								</div>
 							</div>
 					    </div>
-					    <div class="col" align="center">
-					    	<div class="card" style="width: 18rem;">
-								<img src="../public/img/3.jpg" class="card-img-top" alt="...">
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<small class="form-text text-muted">-Giri Kusuma</small>
-										<br>
-									</div>
-									<div class="blog-card-content">
-										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-										<br>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">By Giri Kusuma</small>
-									</div>
-								</div>
-							</div>
-					    </div>
+					<?php } ?>
 					  </div>
 					</div>
 			    </div>
@@ -55,7 +39,7 @@
 				</div>
 				<br>
 				   <form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search">
+					<input class="form-control mr-sm-2" type="search" name="cariblog" laceholder="Search">
 					   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					   <br>
 				</form>
